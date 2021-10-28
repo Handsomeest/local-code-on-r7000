@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件对象属性</title>
+</head>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+<body>
+    <div>
+        123
+        <ul id="a1">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+         </ul>
+    </div>
+    
+    <script>
+        let div = document.querySelector('div');
+        div.addEventListener('click',function(e){
+            // console.log(e.target);
+            // targrt返回的是触发事件的对象(元素)(事件源)；
+            // console.log(this);
+            // this返回的是绑定事件的对象(元素)
+        })
+        
+        let ul1 = document.querySelector('#a1');
+        console.log(ul1);
+        ul1.addEventListener('click',function(e){
+            console.log(this);
+            console.log(e.target);
+
+        })
+    </script>    
+</body>
+</html>

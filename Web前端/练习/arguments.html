@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arguments的使用</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        //arguments的翻译是参数
+        //不确定到底有多少参数要传递进来，就用arguments
+        //存储所有传递过来的实参
+        //每个函数都内置了这个
+        //类似数组，能遍历，但是和数组不同，能遍历，有length属性，没有push,pop等方法
+       //例子：
+       function fn() {
+        //    console.log(arguments);
+        //    console.log(arguments[3]);
+          return 666;
+           
+       }
+       console.log(fn());
+       fn(1,2,3,4)
+    </script>
+</html>

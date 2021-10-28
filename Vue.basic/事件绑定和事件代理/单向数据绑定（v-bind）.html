@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单项数据绑定</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <input type="text" :value="name">
+        <!-- v-bind是单向的数据绑定
+        修改实例里面的数据容器里的也会改变
+        修改容器里的数据；实例里的数据不会改变
+        -->
+    </div>
+    <script>
+        const vm = new Vue({
+            el:"#root",
+            data () {
+                return {
+                    name:"单向数据绑定"
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>

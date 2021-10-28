@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>key的原理正确</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+
+<body>
+    <!-- 
+        效果：
+        一堆人名字，年龄，性别，排序，然后渲染
+
+     -->
+    <div id="root">
+        <h1>人员列表</h1>
+        <ul>
+            <!-- 遍历数组 -->
+            <!-- <li v-for='p in persons' key="p.id"> -->
+                <!-- 上面他妈的写错了 -->
+            <li v-for='p in persons' :key="p.id">
+                
+                <!-- 
+                     key是给节点做一个标识
+                     key是vue内部在用，在真实DOM里面不会存在
+                  -->
+                {{ p.name }} - {{ p.age }}
+                <input type="text">
+
+            </li>
+            <!-- v-for里面的p只是一个形参
+             -->
+            <button @click.once='add'>添加一个老刘</button>
+            <!--
+                    .once是只执行一次
+                  -->
+    </div>
+    <script>
+        let vm = new Vue({
+            el: '#root',
+            data() {
+                return {
+                    persons: [
+                        { id: '001', name: '张三', age: 18, sex: '男' },
+                        { id: '002', name: '张四', age: 19, sex: '男' },
+                        { id: '003', name: '王六', age: 18, sex: '女' },
+                        { id: '004', name: '赵云', age: 25, sex: '女' },
+                    ]
+
+                }
+            },
+            methods: {
+                add() {
+                    let p = { id: '005', name: '老刘', age: 38, sex: '男' }
+                    this.persons.unshift(p);
+                    //  添加到了最前面
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

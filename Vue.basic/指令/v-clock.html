@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-clock</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+<body>
+    <div>
+        <p v-clock>  {{ n }}  </p>
+
+        v-clock 是没有值的，作用是在vue渲染到的时候删除自己<br>
+        作用场景是网络卡顿的情况下配合CSS先把改元素隐藏，等vue接管的时候，就会显示出来
+        
+        
+    </div>
+    <script>
+        let vm = new Vue({
+            el:'div',
+            data () {
+                return {
+                    n:'123',
+                    a:'321'
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>

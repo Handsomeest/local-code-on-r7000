@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组筛选案例应用push</title>
+</head>
+<body>
+     
+     
+
+    
+</body>
+<script>
+     var arr = [1,2,3,4,5];
+    // 筛选出大于3的
+    var newarr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 3) {
+        //    newarr[newarr.length] = arr[i];//一种方法
+        newarr.push(arr[i]);//插进4之后5插在4后买，所以顺序是正确的
+        // newarr.unshift(arr[i]);//插了4之后，5又插在4前面所以顺序反了。
+
+        }
+        
+    }
+    console.log(newarr);
+        
+    
+</script>
+</html>

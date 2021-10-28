@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>offset元素偏移量</title>
+</head>
+<style>
+    .father {
+        width: 500px;
+        height: auto;
+        background-color: pink;
+        margin: 100px;
+    }
+
+    .son {
+        width: 100px;
+        height: auto;
+        background-color: rgb(151, 142, 150);
+        margin-left: 143px;
+
+    }
+</style>
+
+<body>
+    <div class="father">
+        <div class="son">
+            offset翻译过来是偏移量<br>
+            可以动态获得元素的位置，偏移量，大小等等<br>
+            获取元素距离父元素的位置<br>
+            获取元素自身的大小（不带单位）<br>
+
+
+        </div>
+
+    </div>
+    <script>
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        console.log(father.offsetTop);
+        console.log(father.offsetLeft);
+        // 以带有定位的父亲为准，如果没有带有定位的父亲，就以body为准
+        console.log(son.offsetLeft);
+    </script>
+
+
+
+</body>
+
+</html>

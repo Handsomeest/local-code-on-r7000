@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object.defineproperty方法</title>
+</head>
+<body>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+    <div>
+        <p>object.defineproperty方法是给对象添加属性用的或者说定义属性用的</p>
+    </div>
+    <script>
+        let number = 18
+        let person = {
+            name:"张三",
+            sex: "男",
+        }
+        Object.defineProperty(person,"age",{
+            // value:18,
+            // // 这样添加的属性默认是不可以枚举的,enumerable配置项改成true就能了
+            // enumerable:true, //控制是否可以枚举；默认false
+            // writable:true,  //控制属性是否可以被修改；默认false
+            // configurable:true,//控制属性是否可以被删除；默认false
+            get:function(){
+                return number
+                // 这样age里的数字就会随着number来变化了
+            }
+           
+        }) 
+        // 这个方法传三个参数
+        // 第一个要修改的对象
+        // 第二个，要插入的属性的名字
+        // 第三个：配置项
+        console.log(person);
+        for(let k in person){
+            console.log(person[k]);
+        }
+    </script>
+    
+</body>
+</html>

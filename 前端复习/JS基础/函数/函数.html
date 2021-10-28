@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 函数就是封装了一段可以重复执行的代码，让大量代码重复使用
+    // 函数就是代码块
+
+        // var num1 = 1;
+        // var num1 = 2;
+
+    function getSum() {  //驼峰命名法，第二个单词开头大写
+        //var sum = arguments[0]; + arguments[1];//这里错了应该是要写数组的第几个
+        var sum = 0;
+        for(var i = 0 ; i < arguments.length; i++){
+           sum += arguments[i]; 
+
+        //   arguments
+
+        }
+        // 搜索了下，如果在函数体内有用let定义的变量，return应该是输出不了的
+        return sum;
+    }
+
+    // getSum(1,2)
+    console.log(getSum(2,3));
+
+    // 好了这次成功执行了
+
+
+    // 函数还有第二种方式
+    var fun = function (a1,a2) { //定义变量这样子的，调用函数的时候就写变量名字
+        console.log(a1,a2);
+    }
+
+    fun(1,2);
+</script>
+</html>

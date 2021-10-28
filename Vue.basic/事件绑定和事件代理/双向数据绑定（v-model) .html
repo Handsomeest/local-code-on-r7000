@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双向数据绑定</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <input type="text" v-model:value="name">
+        <p>{{name}}</p>
+        <p>上面的文字会随着输入框里的文字而变化，因为是双向绑定，data里的改变了</p>
+        <!--  -->
+    </div>
+    <script>
+        const vm = new Vue({
+            el:"#root",
+            data () {
+                return {
+                    name:"双向数据绑定"
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>

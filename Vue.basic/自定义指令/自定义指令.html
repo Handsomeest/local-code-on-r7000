@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义指令</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+
+<body>
+    <div>
+        <h1 v-pre> 当前的msg值是
+            <span v-text="msg"> </span>
+            {{ msg }}
+        </h1><br>
+        由上可见，父元素添加了 v-pre后，子元素也会收到影响<br>
+        <span style="color: red; font-size: 50px; height: fit-content;display: inline-block;" v-pre> 上面是个实验 </span>
+
+
+
+        <h1> 当前的msg值是
+            <span v-text="msg"> </span>
+        </h1>
+
+        <h1> 放大10倍数
+            <span v-big="msg +1"> </span>
+            <!-- 
+                没有设置big函数然后调用的时候会报错
+             -->
+        </h1>
+        <button @click='msg++'> 点我msg加1</button>
+
+
+        <p style="background-color: pink; width: fit-content;" v-pre> 自定义指令是把真实DOM元素交给你，让你自己去拿着操作 </p><br>
+        <p style="background-color: pink; width: fit-content;" v-pre> 自定义指令时候里面的属性里面的this是window，因为操作原生的DOM，所以肯定是Window
+        </p><br>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: 'div',
+            data() {
+                return {
+                    msg: 1,
+                }
+            },
+            directives: {
+                // 这是自定义指令的简写形式
+
+                // big函数调用时间：
+                // 指令与元素绑定时候，就是第一次一上来就调用一次
+                // 模板重新渲染时候就会调用
+                big(elements, binding) {
+                    // element,真实dom元素 
+                    // binding,绑定，元素和指令之间的关联关系
+                    elements.innerText = binding.value * 10
+                    // binding的value在这里是n
+                    console.log(binding);
+                    // 下面是输出结果
+                    // {name: 'big', rawName: 'v-big', value: 2, expression: 'msg +1', modifiers: {…}, …}
+                    // def: { bind: ƒ, update: ƒ }
+                    // expression: "msg +1"    (这是表达式)
+                    // modifiers: { }
+                    // name: "big"
+                    // rawName: "v-big"             (指令名字)
+                    // value: 2                 (数值)
+                    // [[Prototype]]: Object
+
+                }
+
+            }
+
+        })
+    </script>
+
+
+</body>
+
+</html>

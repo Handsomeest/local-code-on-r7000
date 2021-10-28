@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单例模式</title>
+</head>
+
+<body>
+    <script>
+        // 一个构造函数一生只生成一个实例
+        // 应用：
+        // 自定义弹出层
+
+        // 单例模式的核心就是只生成一个实例
+
+        function Persion() {
+            this.uname = '张三',
+                this.age = 18
+        }
+        let p1 = new Persion();
+        let p2 = new Persion();
+        console.log(p1 == p2);//结果是false
+        // 单例模式的目的是让结果为true
+
+        // 单例模式核心代码
+        let instance = null
+        function singleTon() {
+            if(!instance) instance = new Persion();
+            return instance
+            
+        }
+        let p3 = singleTon();
+        let p4 = singleTon();
+        console.log(p3 == p4); //true
+
+    </script>
+
+</body>
+
+</html>

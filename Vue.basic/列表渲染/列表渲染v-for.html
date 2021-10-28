@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表渲染v-for</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+<body>
+    <!-- 
+        效果：
+        一堆人名字，年龄，性别，排序，然后渲染
+
+     -->
+     <div id="root">
+         <h1>人员列表</h1>
+         <ul>
+             <!-- 遍历数组 -->
+             <li v-for = '(p,index,c) in persons'key="p.id"> 
+                  <!-- {{ p.name }} - {{ p.age }} -->
+                  <!-- {{ a }}  a就是persons里的元素 -->
+                  <!-- {{ b }}  b是数组的角标，索引值 ;其实是index,-->
+                  <!-- {{ c }}   c是undefind;在Vue里undefind默认是不给显示的 -->
+                  {{ p.name }} - {{ p.age }}
+
+                
+                
+                </li>
+             <!-- v-for里面的p只是一个形参
+             -->
+            
+         </ul>
+
+         <!-- 遍历对象 -->
+         <ul>
+             <h2>汽车信息</h2>
+             <li v-for = '(value,k) of car' key="k">
+                <!-- {{ value}}- {{ k }} <br> -->
+                {{ k}}- {{ value }}
+                <!-- 
+                    先收到的是value
+                    后收到的是key
+                 -->
+             </li>
+             
+         </ul>
+
+     </div>
+     <script>
+         let vm = new Vue({
+             el:'#root',
+             data () {
+                 return {
+                     persons:[
+                         {id:'001',name:'张三',age:18,sex:'男'},
+                         {id:'002',name:'张四',age:19,sex:'男'},
+                         {id:'003',name:'王六',age:18,sex:'女'},
+                         {id:'004',name:'赵云',age:25,sex:'女'},
+                     ],
+                     car:{
+                         name:'奥迪',
+                         price:'70万',
+                         color:'white',
+
+                     }
+                 }
+             }
+         })
+     </script>
+    
+</body>
+</html>

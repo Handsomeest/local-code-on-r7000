@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算属性缩写</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+
+        姓: <input type="text" v-model:value=" fastname"></br>
+        名: <input type="text" v-model:value="lastname"></br>
+        全名：{{ fullname }}</br>
+
+
+    </div>
+    <script>
+        const vm = new Vue({
+            el: "#root",
+            data() {
+                return {
+                    fastname: "张",
+                    lastname: "三",
+                }
+            },
+            // 只有确定属性只有读取，没有修改的时候才可以用简写
+            // 完整写法：
+            /*computed: {
+                
+                fullname: {
+                    // get的作用：当有人读取fullname属性的时候，get就会被调用，get函数的返回值就是fullname的属性值
+                    // get是缩写了 function,因为这函数也不用定义名字
+                    get() {
+                        console.log("get被调用了");
+                        return this.fastname + "-" + this.lastname
+                    },
+                    
+                    set(value) {
+                        console.log("set", value);
+                        let arr = value.split("-")
+                        this.fastname = arr[0];
+                        this.lastname = arr[1];
+                    }
+                }
+            }*/
+            computed: {
+                fullname(){
+                    console.log("get被调用了");
+                    return this.fastname + "-" + this.lastname
+                }
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+
+<body>
+    <div class="good">
+        <p>这是{{ sum }}</p>
+        <button @click="way">这是一个按钮</button>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: ".good",
+            data() {
+                return {
+                    name: "不知道写啥",
+                    numbers: {
+                        a: 1,
+                        b: 2,
+                        c: 6,
+                    },
+                }
+            },
+            // computed: {
+            //   sum:{
+            //       get(){
+            //           return this.numbers.a + this.numbers.b + this.numbers.c ;
+            //       }
+            //   } 
+            // },
+            // 简写：
+            computed: {
+                sum() {
+                    return this.numbers.a 
+                }
+            },
+
+            methods: {
+                way(e) {
+                    // e.target.innerText
+                    alert(e.target.innerText);
+                    this.numbers.a += this.numbers.a;
+                }
+            },
+            // watch: {
+            //     "numbers.a": {                     //监视多层属性里面的某一个的变化
+            //         // deep:true,监视多级的整个的变化
+            //         handler(newValue, oldValue) {
+            //             alert("numbers里a的新旧差值为" + (newValue - oldValue) );
+            //         }
+
+            //     }
+
+            // }
+            // 监视的简写形式：(确定不要深度和immediate的时候可以简写)
+            watch: {
+                "numbers.a":function(newValue,oldValue){
+                    console.log("有变化了");
+
+                }
+            }
+
+        })
+
+    </script>
+
+</body>
+
+</html>

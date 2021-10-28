@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-show</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2 v-if='aqq == 1'> 欢迎来到1 {{ text }}</h2>
+        <h2 v-else-if='aqq == 2'> 欢迎来到2 {{ text }}</h2>
+        <h2 v-else='aqq == 3'> 欢迎来到3 {{ text }}</h2>
+        <!-- else后面就不会再执行了 -->
+        <!-- 
+            v-if
+            v-else-if
+            v-if
+            要连起来用，中间打断了之后的就没有效果了
+         -->
+
+        <button @click='changeDisplay'>点击按钮切换</button>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: 'div',
+            data() {
+                return {
+                    text: '我的世界',
+                    aqq: 1
+
+                }
+            },
+            methods: {
+                changeDisplay() {
+                    if (this.aqq < 3) {
+                        return this.aqq++
+
+                    } else if (this.aqq >= 3) {
+                        return this.aqq = 1
+
+                    } 
+                    
+                }
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

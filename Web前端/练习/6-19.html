@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表达式与运算符</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    console.log(0.2 + 0.1);
+    console.log(0.7 + 100);
+    var num = 100+0.7;
+    console.log(num == 100.7);
+    var num2 = 0.2+0.1;
+    console.log(num2 == 0.3);
+    var a = 10;
+    console.log(++a + 10);
+    var b = 10;
+    console.log(b++ + 10);
+    c = 1+2;//这就是表达式，数字运算符，变量等以能求得数值的有意义排列方法的组合
+    // 3=1+2;这里3就是返回值。
+    console.log(3 == 3);//比较运算符，会转型，输出的是，是和否
+    console.log(3 === 3);//也是比较运算符，全等，要求值和数据类型都一致
+    // 逻辑运算符，也叫布尔运算符，
+    // && 这是逻辑与(并且) ； and
+    // || 这是逻辑或；  or
+    // ！ 这是逻辑非；  not
+
+    console.log(3 < 5 && 3 > 5);
+    console.log(3 >5 || 3 >2);
+    console.log(! 3>2);
+
+    var num = 7;
+    var str = '我爱你中国';
+    console.log(num < 10 && str.length <= 5);
+    console.log(num > 10 || str.length <= 5);
+    console.log(! (num > 10 || str.length > 5));
+</script>

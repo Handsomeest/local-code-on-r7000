@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表筛选</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+<style>
+    input{
+        width: 250px;
+        color: pink;
+    }
+</style>
+
+<body>
+    <!-- 
+    效果是模糊搜索
+
+     -->
+    <div id="root">
+        <h1>人员列表</h1>
+        <!-- <input type="text " value="请输入筛选条件，姓名，性别或者年龄"> -->
+        <input type="text " value='请输入筛选条件，姓名，性别或者年龄'  onblur="javascript:this.value='请输入筛选条件，姓名，性别或者年龄'" onfocus="javascript:this.value=''"  v-model="keyWord">
+        
+        <!-- 
+            实现了自动隐藏value的文字的功能
+         -->
+        <ul>
+            <li v-for='p in persons' :key="p.id">
+                {{ p.name }} - {{ p.age }}
+            </li>
+                
+
+    </div>
+    <script>
+        let vm = new Vue({
+            el: '#root',
+            data() {
+                return {
+                    keyWord:'',
+                    persons: [
+                        { id: '001', name: '马冬梅', age: 18, sex: '女' },
+                        { id: '002', name: '周冬雨', age: 19, sex: '女' },
+                        { id: '003', name: '周杰伦', age: 18, sex: '男' },
+                        { id: '004', name: '温兆伦', age: 25, sex: '女' },
+                    ]
+
+                }
+            },
+            methods: {
+                add() {
+                    let p = { id: '005', name: '老刘', age: 38, sex: '男' }
+                    this.persons.unshift(p);
+                    //  添加到了最前面
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

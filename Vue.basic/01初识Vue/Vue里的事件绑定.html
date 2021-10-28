@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../01初识Vue/JS/vue.js"></script>
+    <title>事件绑定</title>
+
+</head>
+
+<body>
+    <div id="a1">
+        <p>vue里的事件</p>
+        <button v-on:click='showsomething'>事件测试按钮</button>
+        <button @click='showsomething2($event,66)'>事件测试按钮2</button>
+
+    </div>
+    <script>
+        const vm = new Vue({
+            el: '#a1',
+            data: {
+
+            },
+            methods: {
+                showsomething() {
+                    alert('Vue的事件绑定');//注意要加引号
+                    console.log(1);
+
+                },
+                showsomething2(event,number) {
+                    alert('Vue的事件绑定2'+ number );//注意要加引号
+                    console.log(2);
+
+                }
+
+
+            }
+
+        })
+    </script>
+
+</body>
+
+</html>

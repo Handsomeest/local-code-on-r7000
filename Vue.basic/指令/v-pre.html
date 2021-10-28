@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-pre</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+<body>
+    <div>
+        <p v-pre>  {{ n }}  </p>
+        <p v-pre>  {{ a }}  </p>
+        <!-- 
+            v-pre是让元素不被vue渲染
+         -->
+    </div>
+    <script>
+        let vm = new Vue({
+            el:'div',
+            data () {
+                return {
+                    n:'123',
+                    a:'321'
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>

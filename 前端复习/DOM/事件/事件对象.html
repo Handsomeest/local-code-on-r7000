@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件对象t</title>
+</head>
+<body>
+    <div>
+
+    </div>
+    <script>
+        var div = document.querySelector('div');
+        div.onclick = function (e) {
+            console.log(e);
+            // e就是事件对象，是系统帮我们自动创建的，e是一个形参，我们可以自己改名字
+            // IE浏览器是用window.event来做参数的，所以有个兼容写法：
+            // e = e || window.event    
+            
+        }
+        // 事件对象的常用属性和方法:
+        // e.target  返回触发事件的对象
+        // e.srcElement  返回触发事件的对象   狗日的IE678用的
+        // e.type  返回事件类型
+        // 还有组织默认行为和阻止冒泡
+        // 标准： e.preventDefault(),e.stopPropagation()
+        // IE678: e.returnValue,e.cancleBubble
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class绑定</title>
+</head>
+<script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+<style>
+     .basic {
+        color: powderblue;
+        margin: 0 auto;
+    }
+
+    .happy {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        margin: 0 auto;
+    }
+
+    .sad {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(202, 37, 188);
+        margin: 0 auto;
+    }
+
+    .angryy {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(255, 5, 5);
+        margin: 0 auto;
+    }
+
+    .normal {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(185, 189, 133);
+        margin: 0 auto;
+    }
+</style>
+
+<body>
+    <!-- 绑定class样式----字符串写法，适用于：样式的类名不确定，需要动态指定 -->
+    
+    <div class="basic" :class= "a" @click = "changeMood">
+        1234567<br>
+        类型是
+        {{ class2 }}
+    </div>
+
+    <script>
+        let mood = ["basic","happy","sad","angry","normal" ]
+        
+        let vm = new Vue({
+            el: 'div',
+            data() {
+                return {
+                    a: "angry",
+                }
+            },
+            methods: {
+                changeMood(){
+                    let i = Math.floor(Math.random()*5)
+
+                    return this.a = mood[i]
+
+                }
+            }
+        })
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

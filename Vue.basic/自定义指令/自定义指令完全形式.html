@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义指令完整写法</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+
+<body>
+    <div>
+        <h1> 当前的msg值是
+            <span v-text="msg"> </span>
+        </h1>
+
+        <h1> 放大10倍数
+            <span v-big="msg +1"> </span>
+
+        </h1>
+
+        <button @click='msg++'> 点我msg加1</button>
+
+
+
+
+    </div>
+    <script>
+        let vm = new Vue({
+            el: 'div',
+            data() {
+                return {
+                    msg: 1,
+                }
+            },
+            directives: {
+                
+
+            }
+
+        })
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,348 @@
+
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+    <meta http-equiv='X-UA-Compatible' content='IE=9' />
+    <head id='Head1' runat='server'>
+    <title>对外付款</title>
+    <script  type='text/javascript'>
+	    if ( (!!window.ActiveXObject || 'ActiveXObject' in window) && external && external.GetApplicationStartPath && (self.name != 'first')) {	     
+	        self.name = 'first';
+	        self.location.reload();
+	    }
+
+    </script> 
+
+    <link href='frame/css/awsome/css/font-awesome.min.css' rel='stylesheet' />
+    <link href='../../lib/ligerUI/skins/Aqua/css/ligerui-online.css' rel='stylesheet' type='text/css' />
+<link href='../../lib/ligerUI/skins/ligerui-icons.css' rel='stylesheet' type='text/css' />
+<script src='../../lib/jquery/jquery-1.7.1.min.js' type='text/javascript'></script> 
+<script src='../../lib/ligerUI/js/plugins/liger.ui.js' type='text/javascript'></script>
+<script src='../../lib/pubctrls/UrlParser/jquery.url.js' type='text/javascript'></script>
+<script src='../../lib/pubjs/pubjs.min.js' type='text/javascript'></script>
+<script src='Print/printbill.js' type='text/javascript' ></script>
+<script src='js/DealAjax.js' type='text/javascript'></script>
+<script src='js/GSIDP_LIST/base.js' type='text/javascript'></script>
+<script src='js/GSIDP_LIST/ui.js' type='text/javascript'></script>
+<script src='js/GSIDP_WF/base.js' type='text/javascript'></script>
+<script src='js/GSIDPSession.js' type='text/javascript'></script>
+<script src='js/GSIDP_LIST/FileGd.js' type='text/javascript'></script>
+<script src='js/GSIDP_LIST/import.js' type='text/javascript'></script>
+<script src='js/GSIDP_LIST/ctrl.js' type='text/vbscript'></script> 
+    <link href='css/form_blue.css' rel='stylesheet' type='text/css' /><link href='css/QryListCom.css' rel='stylesheet' type='text/css' />
+    <style>
+    
+    </style>
+    <script src='/cwbase/web/scripts/gsp.core.js'></script>
+    <script src='/cwbase/web/scripts/gsp.rtf.core.js'></script>
+    <div id='mask_load' style='top: 0; height: 100%; width: 100%; background: #FFF; position: absolute; z-index: 1000;'>
+            <div class='l-grid-loading-new' style='display: block; z-index: 1002; height: 14px;'>
+                <span>正在加载，请稍后....</span>
+            </div>
+    </div>
+    <script>
+    $(document).on('frameshow', function () {
+           simpleGrid.search();
+    })
+    $(function(){
+         $.getScript('js/GSIDP_LIST/BZZXbtn.JS', function () {});
+});
+</script>
+ <script src="../../WB/WB_WEB/BillList.js" type='text/javascript'></script>
+ <script>
+function openDJBYID(idValue,vsDJZT,vsDJBH){
+    var operType;
+	if (vsDJZT=='0'||vsDJZT=='3'||vsDJZT=='4'||vsDJZT=='14')
+	{
+		operType='edit';
+	}else{
+		operType='view';
+	}
+	var styleid = simpleGrid.getSqlid();
+	var URL='gsycoldefshow.aspx?styleid='+styleid+'&id='+idValue+'&opertype='+operType+'&currpos=0';
+	openurl($.url.param('funcid')+'view',"单据：【"+vsDJBH+"】",URL); 
+}
+    </script>
+    </head>
+    <body>
+    <div id="layout">
+    <div  id='layout_left' position="left" >
+        <select id="select1" style="width: 186px;margin: 7px;display:none;"></select>
+        <div id="tree"></div>
+    </div>
+    <div id='layout_center' position="center">
+        <div id="toolbar"></div>        
+        <table id='qry9bc36298744864931194b5f8b814f9cc' width='100%'>
+            <tr>
+                <td>
+                    <table id='qrydetail' class='qry_form' width=100%><tr>
+                            <td align='right' class='qry_text' rowspan=''>申请单位：
+                            </td>
+                            <td colspan='1'  class='qry_field' rowspan='' width='' >
+                                <input style='width:100%' id='YHFK_DWBH_qry' type='text' />
+                            </td>
+                            <td align='right' class='qry_text' rowspan=''>单据编号：
+                            </td>
+                            <td colspan='1'  class='qry_field' rowspan='' width='' >
+                                <input style='width:100%' id='YHFK_DJBH_qry' type='text' />
+                            </td>
+                            <td align='right' class='qry_text' rowspan=''>申请金额：
+                            </td>
+                            <td colspan='1'  class='qry_field' rowspan='' width='' >         
+                                <input  style='width:45%;' id='YHFK_SQJE_qry1' type='text' />
+                                <div style='float:left;width:10%;line-height:20px;text-align:center;'>--</div>
+                                <input  style='width:45%' id='YHFK_SQJE_qry2' type='text' />
+                            </td></tr><tr>
+                            <td align='right' class='qry_text' rowspan=''>制单人：
+                            </td>
+                            <td colspan='1'  class='qry_field' rowspan='' width='' >
+                                <input style='width:100%' id='YHFK_USERNAME_qry' type='text' />
+                            </td>
+                            <td align='right' class='qry_text' rowspan=''>单据状态：
+                            </td>
+                            <td colspan='1'  class='qry_field' rowspan='' width='' >
+                                <input style='width:100%' id='ROYWZT_ZTSM_qry' type='text' />
+                            </td>
+                            <td align='right' class='qry_text' rowspan=''>申请日期：
+                            </td>
+                            <td colspan='1'  class='qry_field' rowspan='' width='' >         
+                                <input  style='width:45%;' id='YHFK_RQ_qry1' type='text' />
+                                <div style='float:left;width:10%;line-height:20px;text-align:center;'>--</div>
+                                <input  style='width:45%' id='YHFK_RQ_qry2' type='text' />
+                            </td></tr><tr>
+                            <td align='right' class='qry_text' rowspan=''>收款单位名称
+                            </td>
+                            <td colspan='1'  class='qry_field' rowspan='' width='' >
+                                <input style='width:100%' id='YHFK_SKDWBH_qry' type='text' />
+                            </td></tr></table>
+                </td>
+                <td style='text-align:center;width: 160px;'>
+                    <div >
+                        <input type='button' onclick='simpleGrid.search();' class='btnSearch' value='查询' id='btnqry9bc36298744864931194b5f8b814f9cc' />
+                        <input type='button' onclick='simpleGrid.clear();' class='btnSearch' value='清空' id='btnclear9bc36298744864931194b5f8b814f9cc' />
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div id="grid"></div>
+    </div>
+</div>
+    <script>
+    $(function(){
+  simpleGrid.GenerateCols(filter_config);
+
+  simpleGrid.onAfterFilter();
+
+  simpleGrid.setDefval();
+
+  simpleGrid.onAfterSetDef();
+
+  if(!simpleGrid.grid) simpleGrid.grid=$('#grid').ligerGrid(simpleGrid.Config);
+
+  simpleGrid.InitLayOut_Center($("#layout_center"));
+
+  simpleGrid.onAfterInitLayout();
+
+  simpleGrid.InitToolBar.init(btn_config, $("#toolbar"));
+
+  simpleGrid.onAfterInitToolbar();
+
+  simpleGrid.onLoad();
+
+});
+  var btn_config=[
+    {text:"新增",isval:"",valsql:"",valmul:"", id:"add", event:addPub, icon:"add", pid:""},
+    {text:"修改",isval:"",valsql:"",valmul:"", id:"modify", event:btnModifyPub, icon:"modify", pid:""},
+    {text:"复制",isval:"0",valsql:"",valmul:"0", id:"copy", event:GSIDP_LIST.Event.Copy, icon:"copy", pid:""},
+    {text:"删除",isval:"",valsql:"",valmul:"", id:"delete", event:btnDWFKDelete, icon:"delete", pid:""},
+    {text:"查看",isval:"",valsql:"",valmul:"", id:"view", event:GSIDP_LIST.Event.View, icon:"view", pid:""},
+    {text:"刷新列表",isval:"",valsql:"",valmul:"", id:"refresh", event:GSIDP_LIST.Event.Reload, icon:"refresh", pid:""}
+  ];
+  var tree_config=[
+
+  ];
+  var filter_config=[
+    {QRYLISTFIL_FIELD:'YHFK_SKDWBH',QRYLISTFIL_TITLE:'收款单位名称',QRYLISTFIL_ISDATE:'0',QRYLISTFIL_PARA:'{"ctrltype":"HELP","para":{"H_cxid":"f29f1f1436103bbb8eaf75008ba3f1ab","H_fieldConfig":"LSWLDW_WLDWBH,LSWLDW_WLDWBH,LSWLDW_DWMC","H_cols":"","H_ctrls":"LSWLDW_WLDWBH","H_qryWhere":"","H_treeWhere":"","H_onBeforeSelect":"","H_height":"550","H_width":"600","H_onSelected":"","H_def":"","H_isMul":"0","H_ismodal":"0"}}'},
+    {QRYLISTFIL_FIELD:'YHFK_USERNAME',QRYLISTFIL_TITLE:'制单人：',QRYLISTFIL_ISDATE:'0',QRYLISTFIL_PARA:'{"ctrltype":"TEXTBOX","para":{"T_tooltip":"","T_def":""}}'},
+    {QRYLISTFIL_FIELD:'YHFK_SQJE',QRYLISTFIL_TITLE:'申请金额：',QRYLISTFIL_ISDATE:'0',QRYLISTFIL_PARA:'{"ctrltype":"NUMBERBETWEEN","para":{"NB_decimal":"2","NB_def1":"","NB_def2":""}}'},
+    {QRYLISTFIL_FIELD:'YHFK_RQ',QRYLISTFIL_TITLE:'申请日期：',QRYLISTFIL_ISDATE:'0',QRYLISTFIL_PARA:'{"ctrltype":"DATEBETWEEN","para":{"DB_maskCode":"yyyy-MM-dd","DB_valmaskCode":"yyyy-MM-dd","DB_isdate":"1","DB_def1":"","DB_def2":""}}'},
+    {QRYLISTFIL_FIELD:'YHFK_DWBH',QRYLISTFIL_TITLE:'申请单位：',QRYLISTFIL_ISDATE:'0',QRYLISTFIL_PARA:'{"ctrltype":"HELP","para":{"H_cxid":"97979311ca6bfb59155ac1ea3aaf7033","H_fieldConfig":"LSBZDW_DWBH,LSBZDW_DWBH,LSBZDW_DWMC","H_cols":"","H_ctrls":"LSBZDW_DWBH","H_qryWhere":"","H_treeWhere":"","H_onBeforeSelect":"","H_height":"550","H_width":"600","H_onSelected":"","H_def":"","H_isMul":"0","H_ismodal":"0"}}'},
+    {QRYLISTFIL_FIELD:'YHFK_DJBH',QRYLISTFIL_TITLE:'单据编号：',QRYLISTFIL_ISDATE:'0',QRYLISTFIL_PARA:'{"ctrltype":"TEXTBOX","para":{"T_tooltip":"","T_def":""}}'},
+    {QRYLISTFIL_FIELD:'ROYWZT_ZTSM',QRYLISTFIL_TITLE:'单据状态：',QRYLISTFIL_ISDATE:'0',QRYLISTFIL_PARA:'{"ctrltype":"SELECTSQL","para":{"SQ_Table":"ROYWZT","SQ_Field":"ROYWZT_ZTSM","SQ_VAL":"ROYWZT_ZTSM","SQ_TXT":"ROYWZT_ZTSM","SQ_DS":"BZZX","SQ_isMul":"1","SQ_WHERE":"YW5kIFJPWVdaVF9ZV0xYPSdZVycgYW5kIFJPWVdaVF9aVCBub3QgaW4gKDExKQ==","SQ_def":"制单;初审退回;审批退回;稽核退回"}}'}
+  ];
+
+//grid生成脚本
+simpleGrid.getSqlid=function(){
+    var field='';
+    var sqlid='9bc36298744864931194b5f8b814f9cc';
+    if(field!=''&&simpleGrid.grid){
+       var row=simpleGrid.grid.getSelectedRow();
+       if(row){
+           if(row[field]&&row[field]!==''){
+              sqlid=row[field];
+           }
+       }
+    }
+    return sqlid;
+};      
+
+simpleGrid.keyField='YHFK_DJNM';
+
+simpleGrid.DbSrc= 'BZZX';
+
+simpleGrid.MainTable='BZZXYHFK';
+
+simpleGrid.Modid='3d62a4d46f984d73b5aedced3f437d54';
+
+simpleGrid.ListWhere='';
+
+simpleGrid.ColumnConfig=[
+        {display: '单据编号',name:'YHFK_DJBH',id:'YHFK_DJBH',width:130,align:'left',frozen:false,render:function (g) {
+	return "<a href='javascript:void(0)' onclick='openDJBYID(\"" + g["YHFK_DJNM"] + "\",\"" + g["YHFK_BZZT"] + "\",\"" + g["YHFK_DJBH"] + "\")'>" + g["YHFK_DJBH"] + "</a>";
+}},
+        {display: '单据日期',name:'YHFK_RQ',id:'YHFK_RQ',width:80,align:'center',frozen:false},
+        {display: '单位名称',name:'YHFK_DWMC',id:'YHFK_DWMC',width:300,align:'left',frozen:false},
+        {display: '部门名称',name:'YHFK_BMMC',id:'YHFK_BMMC',width:130,align:'center',frozen:false},
+        {display: '经办人',name:'YHFK_USERNAME',id:'YHFK_USERNAME',width:80,align:'center',frozen:false},
+        {display: '申请金额',name:'YHFK_SQJE',id:'YHFK_SQJE',width:130,align:'right',frozen:false,type:'thousand',typePara:''},
+        {display: '摘要',name:'YHFK_BZSY',id:'YHFK_BZSY',width:250,align:'left',frozen:false},
+        {display: '单据状态',name:'ROYWZT_ZTSM',id:'ROYWZT_ZTSM',width:80,align:'center',frozen:false,type:'text',typePara:''},
+        {display: '影像状态',name:'YHFK_YXZT',id:'YHFK_YXZT',width:100,align:'center',frozen:false,type:'text',typePara:''},
+        {display: '收款单位名称',name:'YHFK_SKDWMC',id:'YHFK_SKDWMC',width:200,align:'left',frozen:false}];
+simpleGrid.DelColumn();
+simpleGrid.afterDelColumn();
+simpleGrid.Config={ 
+    columns: simpleGrid.ColumnConfig,
+    url: 'RePageQryListData.ashx',
+    width: '100%',
+    height:'100%',
+    parms: simpleGrid.getParams,
+    dataAction: 'server',
+    rownumbers:true,
+    checkbox: true,
+    isChecked: simpleGrid.MulGrid.isChecked, 
+    onCheckRow: simpleGrid.MulGrid.onCheckRow, 
+    onCheckAllRow: simpleGrid.MulGrid.onCheckAllRow ,
+    onSelectRow:function(){ simpleGrid.onselect.call(this);},
+    onDblClickRow: function(){simpleGrid.onDbselect.call(this);},
+    usePager: true,
+    groupColumnName: '',
+    groupColumnDisplay: '',
+    pageSizeOptions:[10,20,30,40,50],
+    pageSize:50
+};
+simpleGrid.DealConfig();
+simpleGrid.afterDealConfig();
+//simpleGrid.grid=$('#grid').ligerGrid(simpleGrid.Config);
+//grid生成脚本
+simpleGrid.getSql=function(){
+  var vswhere="";
+  if(typeof(simpleGrid.DefCondition)=='function'){
+      vswhere += simpleGrid.DefCondition();
+  }
+  else if(simpleGrid.DefCondition){
+      vswhere += simpleGrid.DefCondition;
+  }
+  if (simpleGrid.LeftCondition != "") {
+      vswhere += simpleGrid.LeftCondition;
+  }
+  if ($.url.param('sqlwhere')!= ""&&$.url.param('sqlwhere') != undefined) {
+      vswhere +=$.url.param('sqlwhere');
+  }  if (window.parent&&window.parent.parentwhere) {
+      vswhere +=window.parent.parentwhere;
+  }  vswhere +=simpleGrid.getSqlWhere();
+  if ($.url.param('sqlonce')!= ""&&$.url.param('sqlonce') != undefined&&simpleGrid.__count == 0) {
+      vswhere +=$.url.param('sqlonce');
+      simpleGrid.__count += 1;  }  if ($.url.param('condition') !== "false") {
+      vswhere += " " + simpleGrid.ListWhere;
+  }
+  if(GSIDP_LIST.Format.isnull($('#YHFK_SKDWBH_qry').val().trim())){
+    vswhere+=" AND YHFK_SKDWBH LIKE '%"+$('#YHFK_SKDWBH_qry').val().trim()+"%'";
+  }
+  if(GSIDP_LIST.Format.isnull($('#YHFK_USERNAME_qry').val().trim())){
+    vswhere+=" AND YHFK_USERNAME LIKE '%"+$('#YHFK_USERNAME_qry').val().trim()+"%'";
+  }
+  if(GSIDP_LIST.Format.isnull($('#YHFK_SQJE_qry1').val())){
+    vswhere+=" AND YHFK_SQJE >= '"+$('#YHFK_SQJE_qry1').val()+"'";
+  }
+  if(GSIDP_LIST.Format.isnull($('#YHFK_SQJE_qry2').val())){
+    vswhere+=" AND YHFK_SQJE <= '"+$('#YHFK_SQJE_qry2').val()+"'";
+  }
+  if(GSIDP_LIST.Format.isnull($('#YHFK_RQ_qry1').val())){
+    vswhere+=" AND YHFK_RQ >= @`"+$('#YHFK_RQ_qry1').val()+"|yyyy-MM-dd`@";
+  }
+  if(GSIDP_LIST.Format.isnull($('#YHFK_RQ_qry2').val())){
+    vswhere+=" AND YHFK_RQ <= @`"+$('#YHFK_RQ_qry2').val()+"|yyyy-MM-dd`@";
+  }
+  if(GSIDP_LIST.Format.isnull($('#YHFK_DWBH_qry').val().trim())){
+    vswhere+=" AND YHFK_DWBH LIKE '%"+$('#YHFK_DWBH_qry').val().trim()+"%'";
+  }
+  if(GSIDP_LIST.Format.isnull($('#YHFK_DJBH_qry').val().trim())){
+    vswhere+=" AND YHFK_DJBH LIKE '%"+$('#YHFK_DJBH_qry').val().trim()+"%'";
+  }
+  if(GSIDP_LIST.Format.isnull($('#ROYWZT_ZTSM_qry').val())){
+    vswhere+=" AND ROYWZT_ZTSM in  " + GSIDP_LIST.Format.GetWhere($('#ROYWZT_ZTSM_qry').val());
+  }
+  return vswhere;
+};
+//用户自定义FUNCTION  按钮点击执行
+function btnDWFKDelete() {    
+     var rows = simpleGrid.grid.getSelectedRows();  
+	if(!rows || rows.length==0 ){
+		TipHelp('没有选中记录！');
+		return;
+	}
+	var savedt  =DealAjax.getJsonDataTable(simpleGrid.DbSrc, 'BZZXYHFK', 'YHFK_BZZT'," and YHFK_DJNM='"+rows[0]["YHFK_DJNM"]+"'");	             
+    var vsDJZT=savedt.Rows[0]["YHFK_BZZT"];
+	if (vsDJZT!='0' && vsDJZT!='3'&& vsDJZT!='4'&& vsDJZT!='14')
+	{
+		TipHelp('单据非申请或退回状态不能删除');
+		return;
+	}
+   if (vsDJZT=='9')
+	{
+		TipHelp('本单据在财务稽核节点，不允许删除');
+		return;
+	}
+
+   $.ligerDialog.confirm('确实删除该条记录吗？', function (reval) {
+     if (!reval) return;
+	 $.ajax({
+        type: "POST", //访问WebService使用Post方式请求
+        url: "../../../GSIDP/ZJGL/service/GXZXBZD.asmx/DelteDWFKData", //调用WebService
+        data: { 'psDJXX':rows[0].YHFK_DJNM},
+        async: false,
+        dataType: 'xml',
+        error: function (x, e) { throw e; },
+        success: function (response) { //回调函数，result，返回值
+            var resultFlag = null;
+            if (response.text == undefined) {
+                resultFlag = response.documentElement.textContent;
+            } else {
+                resultFlag = response.text;
+
+            }
+            if (resultFlag=='1')
+			{
+     var ifyx = DealAjax.execSelectSql('BZZX', Base64.encode("select RODJTREE_SFQYYX from RODJTREE where RODJTREE_LXNM='" + simpleGrid.getSqlid() + "'"), 'str'); 
+     if(ifyx!='0'){
+       DealAjax.YXRejectBill(rows[0]["YHFK_DJBH"], GSIDPSession['GENERSOFT.BS.PUBLIC.USERNAME']);
+		   // YXReject("9bc36298744864931194b5f8b814f9cc", rows[0]["YHFK_DJNM"]);
+     }
+    		var swly = DealAjax.execSelectSql('BZZX', Base64.encode("SELECT F_BY1 FROM BZZXCSZD WHERE F_ID ='FSSCJB9999SWLY'"), 'str');
+		if (swly == '1') {
+		    delfp(simpleGrid, rows[0]["YHFK_DJNM"]);
+		}  
+		      $('#hidopertype').val('edit');         
+              TipHelp('删除成功！');
+              GSIDP_LIST.Event.Reload();
+			}
+            
+        }
+    });  
+   });
+}
+//用户自定义FUNCTION  按钮点击执行
+    </script>
+    <input type='hidden' id='hidbtnpara' value=''/>
+    </body>
+</html>

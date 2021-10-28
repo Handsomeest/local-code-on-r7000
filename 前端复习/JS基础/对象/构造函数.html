@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        // 构造函数就是把相同的对象中公共的相同的属性和方法封装起来
+        // 用来构造对象
+        function Star(uname, age,sex ){  //构造函数默认函数名第一个字母就大写
+            this.name = uname;
+            this.age = age;
+            this.sex = sex;
+            this.sing = function (parameter) {
+                console.log(uname+'唱的歌是'+parameter);
+                alert(uname+'唱的歌是'+parameter);
+            }
+            //这样他就有方法了，接下来只要调用就行了。
+
+            //构造函数里面不用return就能返回数据
+        }
+
+        // 调用构造函数：必须使用NEW
+        // 只要调用了之后就会创建个对象
+        var ldh = new Star('刘德华',18,'男');
+        // 调用：
+        console.log(ldh.age);
+        console.log(ldh['sex']);
+        ldh.sing('冰雨');
+
+    </script>
+</html>

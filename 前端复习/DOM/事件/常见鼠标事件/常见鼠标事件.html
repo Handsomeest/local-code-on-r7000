@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常见的鼠标事件</title>
+</head>
+<body>
+    <div>
+        这是一段不可复制文字
+    </div>
+    <script>
+        document.addEventListener('selectstart',function(e){
+            // selectstart是选中事件
+            e.preventDefault();
+        })
+        document.addEventListener('contextmenu',function(e){
+            // contextmenu  是上下文菜单，（右键菜单）
+            e.preventDefault();
+        })
+    </script>
+    
+</body>
+</html>

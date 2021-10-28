@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        var age = prompt('请输入您的年龄');
+        // var age2 = age.toString();//这里写错了，本来就是字符串了，还转换成字符串。
+        var age2 = parseInt(age);
+        console.log(typeof(age2));
+        console.log(age2-18);
+        
+        if (age2 > 18) {
+            console.log('您已满18岁可以进入网吧 ');
+            // alert ('您已满18岁可以进入网吧');
+           
+        }else{
+            console.log('滚蛋');
+
+        };
+    </script>
+</html>

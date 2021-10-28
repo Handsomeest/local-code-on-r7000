@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简便形式</title>
+</head>
+<body>
+    <script type="module">
+        // 这里不写module就会是默认的text/javascript,浏览器会把它作为JS使用，写了后就会把它做模块
+        // import m1 from "../输出/分别暴露.js"
+        // m1.test();
+
+        // 简便引入只能针对默认暴露
+        import m1 from "../输出/默认暴露.js"
+        m1.change();
+
+    </script>
+    
+</body>
+</html>

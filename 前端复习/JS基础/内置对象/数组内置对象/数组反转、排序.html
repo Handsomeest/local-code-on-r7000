@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组排序</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        var arr = [1,2,3,4,5,6];
+        // 数组翻转
+        arr.reverse();
+        console.log(arr);//修改了原来的数组
+
+
+
+        // 数组排序（冒泡排序）；
+        var arr1 = [16,28,9,2];
+        // arr1.sort(); 
+
+        console.log(arr1);//两位数的时候排序不正确，会是16，2，28，9
+        arr1.sort(function (a,b) {
+            return a-b;//这是正序
+            // return b-a;//这是反序
+
+        });
+        console.log(arr1);
+        
+    </script>
+</html>

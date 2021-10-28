@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象解构赋值</title>
+</head>
+
+<body>
+    <script>
+        var name1 = '赵四'
+        function test() {
+            const obj = {
+                name2: '张三',
+                age: '18',
+                skill: function () {
+                    console.log('我是' + name2 + '我会完美犯罪');
+                    console.log(this);
+                },
+                skill2: () => {
+                    console.log('我是' + name2 + '我会完美犯罪');
+                    console.log(this);
+                }
+
+            }
+            let { name2, age, skill, skill2 } = obj;
+            console.log(name2, age, skill, skill2);
+            skill();
+
+
+        }
+        test();
+
+
+        // let { a,b,c} = obj;
+        // console.log(a,b,c);
+
+
+
+        // let{name2,age,skill, skill2} = obj;
+        // console.log(name2,age,skill,skill2);
+        // skill();
+        // skill2();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数实践</title>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background: yellow;
+    }
+</style>
+
+<body>
+    <div>
+        盒子
+    </div>
+    <script>
+        // 需求：点击div后两秒颜色变成粉色
+        let ad = document.querySelector('div')
+        // console.log(ad);
+        let i = 0;
+        ad.addEventListener('click', function () {
+            i += 1;
+            // 保存this的值
+            let that = this
+            if (i % 2 == 0) {
+                setTimeout(() => {
+                    this.style.background = 'yellow'
+                    // 这里使用箭头函数，this就锁死在上下文时间函数this里了，而不是延时函数的window
+                }, 200)
+            } else {
+                setTimeout(function () {
+                    // 这里的this应该是window，
+                    that.style.background = 'pink'
+
+                }, 200)
+
+
+            }
+
+
+
+        })
+    </script>
+
+</body>
+
+</html>

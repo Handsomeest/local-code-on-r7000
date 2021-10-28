@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改元素内容innerText</title>
+</head>
+<body>
+    <button id="btn"> 我是一个按钮</button>
+    <p id="a2"> 最开始的文字</p>
+    <div class="fuck"> 这个垃圾浏览器好像有问题</div>
+    
+    <script>
+        var btn = document.getElementById('btn');
+        var test = document.getElementById('a2');
+        var fuck = document.getElementsByClassName("fuck");//类选择器他妈的得到的是一个集合;还他妈是只读的
+        console.log(btn);
+        console.log(test);
+        console.log(fuck);//输出的是HTMLCollection ；HTMLCollection，是一个接口，表示 HTML 元素的集合，
+
+        // querySelectorAll输出的是一个 NodeList；类似数组的对象
+        var i = 0;//重点是这个要放在事件函数外面，放在里面每次都清零了
+        btn.onclick = function () {
+            // fuck.innerText[0] = '122';//这个集合里面的元素是只读的，不能用来操作
+            // test.innerText = '改变成了11223';
+            // 我想试试按一下变按一下又恢复
+                      
+            i+=1;
+            console.log(i);
+            if (i % 2 === 0) {
+                test.innerText = '恢复成了最开始的文字'; 
+            }else{
+                test.innerText = '改变成了11223';
+            }
+                          
+           }
+          
+            
+       
+    </script>
+</body>
+</html>

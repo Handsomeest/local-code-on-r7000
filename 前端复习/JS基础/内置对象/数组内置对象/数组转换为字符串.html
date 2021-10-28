@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组转换成字符串</title>
+</head>
+<body>
+    <script>
+        // 数组转换成字符串
+        var arr = ['1','还好吧','辣条','$$'];
+        arr.toString();
+        console.log(arr);//看样子并不会修改原来的数组
+        arr.join('-');
+        console.log(arr);//也没有修改原来的数组
+        console.log(arr.join('-'));//这样输出的就是对应的字符串了
+
+    </script>
+            
+    
+</body>
+</html>

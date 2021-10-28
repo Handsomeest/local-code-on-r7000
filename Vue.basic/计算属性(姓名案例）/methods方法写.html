@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>methods写法</title>
+    <script type = "text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        
+       姓: <input type="text" v-model:value=" fastname"></br>
+       名: <input type="text" v-model:value="lastname"></br>
+       全名：{{ fullname }}</br>
+       <!-- 
+           不带括号的时候是这个函数
+        -->
+       全名：{{ fullname() }}
+       <!-- 
+           带括号的时候是这个函数的返回值
+        -->
+        <!-- 
+            
+         -->
+      
+    </div>
+    <script>
+        new Vue({
+            el: "#root",
+            // 任何一个data里的数据发生变化的时候，Vue里的模板都会重新解析一遍
+            // 模板里的函数也会重新调用
+            data () {
+                return {
+                    fastname: "张",
+                    lastname: "三",
+                    
+                }
+            },
+            // data :{
+            //     fastname: "张",
+            //     lastname: "三",
+            //     abc: "22"
+            // }
+            methods: {
+                fullname(){
+                    console.log("@@@"); //模板加载几次函数就会调用几次
+                    return this.fastname + '-' + this.lastname ;
+                }
+            }
+        })
+
+    </script>
+    
+</body>
+</html>

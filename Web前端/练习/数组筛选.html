@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组筛选</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        var arr = [1,2,10,50,60,41,20,1,3,4];
+        var arr1 = [];
+        var j = 0;
+        for (var i = 0; i < arr.length;i++) {
+            if (arr[i] > 10) {
+            //    arr1[j] = arr[i];
+            //    j++;             //这里之前写错过一次，这里要用j否则只能存储一个数据，数组长度为1
+           arr1[arr1.length] = arr[i];//arr1.length能够自动的识别数组长度，会从0开始加
+                                        //.length这个方法更加能够自动化
+        
+        }
+            
+        }
+        console.log(arr1);
+    </script>
+</html>

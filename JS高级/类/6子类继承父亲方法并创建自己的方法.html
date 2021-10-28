@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6子类继承父亲方法并创建自己的方法</title>
+</head>
+<body>
+
+    <script>
+        class Father{
+            constructor(x,y){
+                this.x = x;
+                this.y = y;
+            }
+            sum(){
+                console.log(this.x + this.y );
+            }
+        }
+
+        var father = new Father(1,2);   
+        // father.sum()
+        class Son extends Father{
+            
+            // 调用父类的构造函数
+            // 子类在构造函数中使用super,必须放在子类的this之前（必须先调用父类的构造方法，再使用子类的构造方法）
+            constructor(x,y){
+                super(x,y);
+                this.x = x;
+                this.y = y;
+            }
+            // subtract ：减去
+            subtract(){
+                console.log(this.x - this.y);
+
+            }
+            
+        }
+        let son = new Son(2,1);
+        son.sum()
+        son.subtract();
+
+
+
+    </script>
+    
+</body>
+</html>

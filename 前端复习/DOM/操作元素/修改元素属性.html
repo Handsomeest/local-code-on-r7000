@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击按钮修改图片</title>
+</head>
+    <style>
+        .c1 {
+            width: 300px;
+            height: 200px;
+            border-style: solid;
+            border-color: olivedrab;
+            /* outline-color: orange; */
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .c2{
+            width: fit-content;
+            height: auto;
+            border-style: solid;
+            border-color: orange;
+            margin: 0 auto;
+        }
+        img{
+            width: 300px;
+            height: 200px; 
+            margin: 0 auto;
+        }
+
+    </style>
+<body>
+    <div class="c1">
+        <div class="c2">
+            <button id="a1">按键1</button>
+             <button id="a2">按键2</button>
+
+        </div>
+        
+        <img src="/图片/修改元素属性/图片1.png" alt="默认是图片1">
+        
+    </div>
+    <script>
+        // 获取元素
+        
+        var btn2 = document.getElementById('a2');
+        var btn1 = document.getElementById('a1');
+        var img = document.querySelector('img');
+        console.log(img);
+        // 注册事件 
+        btn1.onclick = function () {
+            img.src = '/图片/修改元素属性/图片1.png'
+            
+        }
+        btn2.onclick = function () {
+            img.src = '/图片/修改元素属性/图片2.png'
+            
+        }
+    </script>
+
+    
+</body>
+</html>

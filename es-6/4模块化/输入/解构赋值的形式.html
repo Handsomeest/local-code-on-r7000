@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解构赋值的形式导入模板</title>
+</head>
+<body>
+
+    <script type="module">
+        import{school,test} from "../输出/分别暴露.js"
+        console.log(school);
+        console.log(test);
+        console.log(test());
+        test();
+        // function test2(){
+        //     console.log('做实验');
+        //     return undefined
+        // }
+
+        // console.log(test2 + "11!");
+        // console.log(test2()  + "111#");
+        import{school as aiguigu,test as test_1} from "../输出/统一暴露.js"
+        // 引入的模板重名的时候可以用as来改名字
+        console.log(test_1,aiguigu);
+
+        import{ default as m3} from "../输出/默认暴露.js"
+        // import{ default } from "../输出/默认暴露.js"
+        // 不能直接用default,要用as来给弄个别名
+
+
+    </script>
+    
+</body>
+</html>

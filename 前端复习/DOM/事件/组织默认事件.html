@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阻止默认事件</title>
+</head>
+
+<body>
+    <div>
+        <a href="https://www.bilibili.com/video/BV1Sy4y1C7ha?p=255">bilibili</a>
+    </div>
+    <script>
+        let a = document.querySelector('a')
+        a.addEventListener('click',function(e){
+            // 三种方法，标准的,IE的，和兼容的
+            e.preventDefault();
+            e.returnValue;
+            // return false;   这个方法是兼容的，但是只能用在传统的方式上
+            // return后面的代码没法继续执行了
+        })
+    </script>
+
+</body>
+
+</html>

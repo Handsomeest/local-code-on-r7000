@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementById</title>
+</head>
+    <div id="a1">
+        <p>你妈妈的吻</p>
+    </div>
+    <script> //Js从上往下运行，所以要先写标签，再写JS
+        document.getElementById('a1')//括号里的id区分大小写
+        var a1 = document.getElementById('a1')
+        console.log(a1);
+        console.log(typeof(a1));//返回的是一个元素对象
+        console.dir(a1);
+    </script>
+<body>
+
+    
+</body>
+</html>

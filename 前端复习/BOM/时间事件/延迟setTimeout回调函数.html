@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+</head>
+<body>
+    <button>按下停止计时</button>
+    <script>
+        // 回调函数：时间到了才会去调用的函数是回调函数；像之前学的添加事件里面的函数也是回调函数
+        // 时间是毫秒，省略默认是0
+        // setTimeout(function() {
+        //     console.log('时间到了');
+        // },2000)
+
+
+        // 里面可以写函数名字
+        var timer1 =  setTimeout(test,3000)
+        function test() {
+            console.log('时间到了');
+        }
+        
+
+        //  清除定时器
+        var btn = document.querySelector('btn');
+        btn.addEventListener('click',function(){
+            clearTimeout(timer1);
+            
+        })
+        
+
+    </script>
+    
+</body> 
+</html>

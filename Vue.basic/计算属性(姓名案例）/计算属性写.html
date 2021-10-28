@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算属性写法</title>
+    <script type = "text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        
+       姓: <input type="text" v-model:value=" fastname"></br>
+       名: <input type="text" v-model:value="lastname"></br>
+       全名：{{ fullname }}</br>
+       <!-- 
+           计算属性：
+           1：就是把data里面的属性计算一下； 写在computer里
+           2：底层借助了Object.defineproperty的getter和setter来实现
+           3：get在什么时候执行：
+                    （1）初次读取的时候会执行一次
+                    （2）依赖的数据发生变化的时候会再次 被调用
+            4：优势：methods每次都会要执行，都要调用函数
+                    计算属性会把计算出来的属性缓存起来；后面调用的直接读缓存，不用再执行计算
+            5：备注：
+                    计算属性会直接出现在VM上，直接使用就可以
+            6：如果计算属性要修改，那么要配置set函数
+               
+        -->
+      
+    </div>
+    <script>
+
+        const vm = new Vue({
+            el: "#root",
+            // 任何一个data里的数据发生变化的时候，Vue里的模板都会重新解析一遍
+            // 模板里的函数也会重新调用
+            data () {
+                return {
+                    fastname: "张",
+                    lastname: "三",
+                    
+                }
+            },
+        //   对于Vue来说，它认为data里的就是属性，前面的是属性名字，后面的是属性值
+            computed: {
+                // 计算属性里面的属性要写成对象的形式
+                // fullname是计算出来的新属性
+                fullname:{
+                    // get的作用：当有人读取fullname属性的时候，get就会被调用，get函数的返回值就是fullname的属性值
+                    // get是缩写了 function,因为这函数也不用定义名字
+                    get(){
+                        console.log("get被调用了");
+                        return this.fastname + "-" + this.lastname
+                    },
+                    // set的作用：当有人修改fullname的时候把
+                   set(value){
+                    //    value参数就是你把fullname改的东西，你改成什么，fullname就是什么。
+                    console.log("set",value);
+                    // 把字符串拆分为数组
+                    let arr = value.split("-")
+                    this.fastname = arr[0];
+                    this.lastname = arr[1]; 
+
+                   }
+
+
+                }
+            }
+        })
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数</title>
+</head>
+
+<body>
+    <script>
+        // 申明函数
+        let fn = (a, b) => {
+            return a + b;
+        }
+        // 调用函数
+        let result = fn(1, 2);
+        console.log(result);
+
+        // 箭头函数的this是静态的；始终指向函数申明时候的上下文
+        // 
+        function getName() {
+            console.log(this.name);
+
+        }
+        let getName2 = () => {
+            console.log(this.name);
+
+        }
+
+        window.name = '尚硅谷';
+        const school = {
+            name: 'AITAIGUIGU'
+        }
+        // 直接调用
+        getName();
+        getName2();
+        // 使用Call调用
+        getName.call(school);
+        // 这个改变了
+        getName2.call(school);
+        // 这个没有，箭头函数的this是静态的
+
+        // this不能做构造函数。因为this已经写死了
+        // 没有arguments对象
+        // 简写：省略小括号，当有且只有一个参数
+        // 省略花括号：函数只有一条代码，return也要省略，语句的执行结果就是返回值
+        let fn2 = n => n*n;
+        console.log(fn2(3));
+        
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

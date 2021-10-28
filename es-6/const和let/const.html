@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>const</title>
+</head>
+<body>
+    const定义常量，值不能修改的量
+    对于对数组和对象的内容的修改，不算对常量的修改，不会报错，而修改他们的赋值就会报错
+    所以用const来申明数组和对象是比较合适的
+
+    <script>
+        const SCHOOL = '尚硅谷';
+        // 必须要赋初始值
+        // 申明常量全部大写
+        // 常量的值不能修改
+        //  SCHOOL = "ABC"   这样是会报错的，因为SCHOOL是常量，不能再修改了
+        // 和let一样，const也是块级作用域
+        // 对于对数组和对象的内容的修改，不算对常量的修改，不会报错
+        const ARR = ['uzi','dasima','221'];
+         ARR.push('AWX');
+         console.log(ARR);
+        //  这样是因为数组指向的地址没变化
+        // ARR = 100；   // 这样修改地址变了，所以会报错
+
+
+    </script>
+    
+</body>
+</html>

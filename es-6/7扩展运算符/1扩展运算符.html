@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扩展运算符</title>
+</head>
+<body>
+    <script>
+        // 扩展运算符是将数组转换为成逗号分割的参数序列
+        const arr = ['张三',123,'里斯',548];
+        //  log
+        console.log(...arr);
+        function test(...args) {
+            console.log(arguments);
+            console.log(...args);
+            
+        }
+        test(...arr)
+        // 相当于把数组按逗号分开然后传递给函数了
+
+
+
+
+    </script>
+    
+</body>
+</html>

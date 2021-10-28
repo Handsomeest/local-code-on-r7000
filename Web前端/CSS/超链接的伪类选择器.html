@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>超链接的伪类</title>
+    <style>
+        a:link
+        {
+        color: teal;
+        font-size: 60px; 
+        }
+
+/* link表示没访问过的链接(正常的链接) */
+        a:visited
+        {
+            color: tomato;
+        }
+        /* visited表示访问过的链接，出于隐私原因，visited只能设置颜色，别的不行 */
+
+        a:hover
+        {
+            color: teal;
+        }
+        /* hover表示鼠标移到的位置，不只是超链接，别的也可以用 */
+
+       a:active
+       {
+           font-size: 180px;
+       }
+    </style>
+</head>
+<body>
+    <a href="https://www.baidu.com/" target="_blank">百度</a>
+    <br>
+
+    <a href="https://www.baidu123.com/">百度123</a>
+    
+</body>
+</html>

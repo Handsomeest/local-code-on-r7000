@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预解析</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // JS实际运行不只是从上往下运行
+    // 预解析就是定义函数和变量的时候会发生提升，把var和function摘出来
+    // 放到当前作用域的最前面赋值为未定义，然后之后的代码从上往下来
+    // 在预解析的过程中如果变量名和函数名重名，就会只保留函数
+    // 
+    // 例子
+    fun(1)
+    function fun(num) {
+        console.log(num);
+    }
+
+    // 上面相当于
+    function fun(num) {
+        console.log(num);
+    }
+    fun(1)
+
+    // 例子2
+    fn();
+    var fn = function () {
+        console.log(1);
+    }
+    // 相当于执行了：
+    var fn
+    fn();
+    fn = function () {
+        console.log(1);
+    }
+
+
+</script>
+</html>

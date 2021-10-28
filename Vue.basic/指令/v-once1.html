@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-once</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+<body>
+    <div>
+        <p v-once> n  一开始是  {{ n }}</p>
+        <p>  n 现在是   {{ n }}</p>
+        <p>
+            v-once是让这个元素只被渲染一次，之后都是静态资源，不会再变化了
+        </p>
+       
+        <button @click = ' n++'>点我n加1</button>
+        
+    </div>
+    <script>
+        let vm = new Vue({
+            el:'div',
+            data () {
+                return {
+                    n:1,
+                    a:'321'
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>

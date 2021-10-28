@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件流验证</title>
+</head>
+    <style>
+         body{margin: 0;}
+        .father{
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: rebeccapurple;
+
+        }
+    </style>
+<body>
+    <div class="father">
+        <div class="son">
+            son
+        </div>
+    </div>
+    <script>
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        // 绑定事件的第三个参数是true,那么处于捕获阶段,不写默认是false,也就是冒泡阶段
+        son.addEventListener('click',function(){
+            alert('son')
+        },true)
+        // son.addEventListener('click',function(){
+        //     alert('son2')
+        // })
+        // 用事件监听的方法添加事件可以添加几个，依次执行，用传统的方法只认最后一个
+        father.addEventListener('click',function(){
+            alert('father')
+        },true)
+        // 单点father盒子还是只有father的事件响应，因为冒泡还是捕获都是从子元素来说的
+    </script>
+</body>
+</html>

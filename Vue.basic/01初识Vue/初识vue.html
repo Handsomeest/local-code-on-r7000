@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../01初识Vue/JS/vue.js"></script>
+    
+</head>      
+<body>
+    <!-- 这是一个容器 -->
+    <div id="a1">       
+        我想要显示{{ text }}   
+        <!-- 只要是VM中有的属性，花括号中都能写 -->
+        <!-- 两个花括号是插值语法 -->
+
+    </div>
+
+    <script>
+
+    const vm = new Vue({          //这是创建了Vue实例
+        // el: '#a1',      //对应容器的ID
+        // data: {
+            // text: '插值语法实验'
+        //  }
+         // el和data都有两种写法，以后必须用函数写法
+         // data的函数写法：
+         data (){                   //这里不能用箭头函数，否则this会指向
+            return {
+                // console.log(this);    //这里错误的原因是把她当成一个添加的属性了
+                text: '插值语法实验'
+              
+            }
+            console.log(this);
+         }
+   
+    })
+
+    // el的第二种写法：（先创建vue实例后面再挂载），可以搭配定时函数一起使用。
+   setTimeout(() =>{    //箭头函数
+    vm.$mount('#a1')    //
+   },1000)              //1000毫秒之后实例和容器关联；异步
+    
+
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标移动事件</title>
+</head>
+<style>
+    img{
+        position: absolute;
+        width: 10%;
+    }
+</style>
+<body>
+    <div>
+        <img src="/图片/fiying.gif" alt="飞行">
+    </div>
+    <script>
+        var gif = document.querySelector('img')
+        // console.log(gif.width);
+        document.addEventListener('mousemove',function(e){
+            // console.log('1');
+            let x = e.clientX;
+            let y= e.clientY;
+            // 要加px
+            
+            gif.style.left = (x - gif.width/2) + 'px';
+            gif.style.top = (y -gif.height /2)+ 'px';
+
+
+
+        })
+    </script>
+    
+</body>
+</html>

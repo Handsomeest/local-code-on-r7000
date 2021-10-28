@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天气案例监视属性</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+<style>
+    div {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgb(168, 255, 127);
+        margin: 0 auto;
+    }
+
+    button {
+        display: block;
+        height: fit-content;
+        width: fit-content;
+        background-color: rgba(222, 221, 135, 0.836);
+        margin: 0 auto;
+    }
+</style>
+
+<body>
+    <div id="root">
+        <!-- 
+            需求：点击切换天气按钮，上面的天气形容词跟着改变
+         -->
+        <p>今天天气很{{ a2 }}</p>
+        <button v-on:click="change">切换天气</button>
+    </div>
+
+
+    <script>
+        const vm =  new Vue({
+            el: "#root",
+            data() {
+                return {
+                    isHot: true
+                }
+            },
+            computed: {
+                a2() {
+                    if (this.isHot == true) {
+                        return "凉爽"
+                    } else {
+                        return "炎热"
+                    }
+                }
+            },
+            methods: {
+                change() {
+                    this.isHot = !this.isHot
+                }
+            },
+            watch: {
+               isHot:{
+                //    handler在要监视的属性发生变化时候调用
+                    immediate:true,
+                    // immediate是让handler函数立即调用一次；没有变化也调用
+                   handler(newValue,oldValue){
+                    //    两个参数，一个是旧的值，一个是新的值；可以新旧参数做对比然后增加逻辑，比方说这里是温度，可以判断在温度差是多少，提示不同的
+                    console.log("handler被调用了" + newValue + oldValue);
+                   }
+               } 
+            }
+            // data里的数据一有变化，整个模板就会重新加载
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>

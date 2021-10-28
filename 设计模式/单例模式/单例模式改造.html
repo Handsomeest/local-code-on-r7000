@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单例模式改造</title>
+</head>
+
+<body>
+    <script>
+        // 单例模式改造
+        // 利用自执行函数和闭包
+
+        function Persion() {
+            this.uname = '张三',
+                this.age = 18
+        }
+
+        const single = (function () {
+
+            let instance = null;
+
+            // 形成了闭包，上面的自执行函数的作用域不会消失。保存了数据
+            return function () {
+                if (!instance) instance = new Persion();
+                return instance;
+            }
+        })()
+
+        let p1 = single();
+        let p2 = single();
+        console.log( p1 == p2 );
+    </script>
+
+</body>
+
+</html>

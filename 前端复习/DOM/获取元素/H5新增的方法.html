@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5新增的方法</title>
+</head>
+<body>
+    <p class="touda">
+        根据类名来选择是HTML5新增的方法（getElementByClassName())
+        还有
+    </p>
+    <p class="touda">
+        11
+    </p>
+    <p class="touda">
+        22
+    </p>
+
+    <script>
+        var touda = document.getElementsByClassName('touda');//结果是HTMLCollection，是一个接口，表示 HTML 元素的集合
+        console.log(touda);
+        var touda1 = document.querySelector('.touda');//返回指定选择元素的第一个对象
+        console.log(touda1);
+        var touda2 = document.querySelectorAll('.touda');//queryselectorall返回指定选择器的全部元素；结果是 NodeList；类似数组的对象
+        console.log(touda2);
+        
+    </script>
+    
+</body>
+</html>

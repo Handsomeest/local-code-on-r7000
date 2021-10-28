@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算属性写法</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+
+        姓: <input type="text" v-model:value=" fastname"></br>
+        名: <input type="text" v-model:value="lastname"></br>
+        全名：{{ fullname }}</br>
+
+    </div>
+    <script>
+
+        const vm = new Vue({
+            el: "#root",
+
+            data() {
+                return {
+                    fastname: "张",
+                    lastname: "三",
+
+                }
+            },
+
+            computed: {
+
+                fullname: {
+                    setTimeout(() => {
+                        get() {
+                        console.log("get被调用了");
+                        return this.fastname + "-" + this.lastname
+                    },
+                    }, 1000);
+                   
+
+                    set(value) {
+                        console.log("set", value);
+
+                        let arr = value.split("-")
+                        this.fastname = arr[0];
+                        this.lastname = arr[1];
+
+                    }
+
+
+                }
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

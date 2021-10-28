@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数求和</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //函数的参数包括形参和实参
+    //在申明函数时候的参数是形参
+    //在调用函数时候用的函数是实参
+    //形参是用来接受实参的，在运行过程中，实参的值会传递给形参
+    function getsum(num1,num2) {
+        var sum = 0;
+        for (var i = num1; i <= num2; i++) {
+            sum = sum + i;
+            
+        }
+        alert('累加结果是' + sum);//输出求和值
+    }
+    getsum(
+        (prompt('请输入第一个数字')),Number(prompt('请输入第二个数字')))
+</script>
+</html>

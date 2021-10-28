@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组增减元素</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        // pusu是在数组的末尾添加元素
+        // unshift是在数组的开头添加元素
+        // 这两个调用之后会返回数组新的长度
+        // pusu案例：
+        var arr = [1,2,3];
+        arr.push(2,3);
+        console.log(arr.push(5,2,3));//在这里也给数组传了一遍数据
+        console.log(arr);
+
+        // unshift案例：
+        arr.unshift('111','qww');
+        console.log(arr);
+
+        // pop是在数组后面删除元素
+        // shift是在数组前面删除函数
+        // 都会在调用之后返回数组新的长度
+        // pop例子：
+        arr.pop();//里面不需要参数
+        console.log(arr);//最后一位已经删除了
+
+        // shift例子：
+        arr.shift();
+        console.log(arr);
+
+        // pushu、pop后面增减
+        // unshift、shift前面增减
+
+    </script>
+</html>

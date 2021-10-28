@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-show</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2 v-show='aqq'> 欢迎来到 {{ text }}</h2>
+        <button @click='changeDisplay'>点击按钮切换</button>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: 'div',
+            data() {
+                return {
+                    text: '我的世界',
+                    aqq: true
+
+                }
+            },
+            methods: {
+                changeDisplay() {
+                    if (this.aqq) {
+                       return this.aqq = false
+
+                    } else {
+                        this.aqq = true
+
+                    }
+
+                }
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

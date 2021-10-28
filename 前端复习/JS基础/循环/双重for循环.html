@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双重for循环</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        // 双重for循环，就是在for循环里面再套一个for循环，
+        // 外面的循环一次，里面的全部循环一遍
+        // 打印星星案例
+        // for循环第一次先赋值，然后判断大小，然后执行语句，再自加，然后判断，执行函数语句，自加；循环
+        var str = '';
+        for (i = 0; i<5; i++) { 
+            for (j = 0; j<5; j++) {
+                // console.log('*'); 这样一行打印出来的不是5个星星
+                str = str + '*' //不申明直接用一个变量就相当于自动申明了一个全局变量
+                               
+            }
+            str += '\n'
+            
+        }
+        console.log(str); 
+        
+    </script>
+</html>

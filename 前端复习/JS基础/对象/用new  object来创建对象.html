@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用new  object来创建对象</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        var obj = new Object(); //Object的O要大写
+        obj.uname = '张三等';//结尾要用分号
+        obj.sex = '男';
+        obj.sayHi = function () {
+            alert('Hi');
+           
+        }
+        //调用方法是一样的：
+        console.log(obj.uname);
+        obj.sayHi();
+    </script>
+</html>

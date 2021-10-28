@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数</title>
+</head>
+<body>
+
+    <script>
+        // 类是对象的模板，对象是类的实例，但是在ES6之前，JS并没有引入类的概念
+        // 在ES6之前对象是通过构造函数来创建的
+        // 对象创建的三种方法：
+        // 对象字面量
+        var obj1 = {};
+        // new object 
+        var obj2 = new Object();
+        // 利用构造函数创建对象
+        function Star (uname, age ){
+            this.uname = uname;
+            this.age = age;
+            this.sing = function(){
+                console.log(uname + '唱歌');
+            }
+        }
+        var ldh = new Star('刘德华',18);
+        console.log(ldh);
+        console.log(ldh.sing);
+        ldh.sing();
+
+        // 构造函数首字母要大写
+        // 构造函数要和new搭配使用
+
+
+        // 用new的时候先创建一个空的对象，
+        // 让this指向空对象
+        // 把属性赋值给空对象
+        // 返回刚刚的对象
+
+
+
+    </script>
+    
+</body>
+</html>

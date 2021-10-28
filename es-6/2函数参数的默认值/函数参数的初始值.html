@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>参数的初始值</title>
+</head>
+
+<body>
+    <script>
+        // ES6允许给函数的参数赋初始值
+        // 形参初始值
+        function add(a, b, c) {
+            console.log(arguments);
+            console.log(c);//undefind
+            // console.log(ch);//未定义
+            return a + b + c;
+        }
+        let result = add(1, 2);
+        console.log(result);
+
+        // 设置默认参数，没有传递参数的时候，c默认就是10
+        // 具有默认值的参数一般靠后
+        // 默认值可以与结构赋值结合使用
+        function add2(a, b, c = 10) {
+            return a + b + c;
+        }
+        let result2 = add2(1, 2);
+        console.log(result2);
+
+    </script>
+
+</body>
+
+</html>

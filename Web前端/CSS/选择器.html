@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    /* #B1{
+        color: tomato;
+    } */
+
+    /* 这是ID选择器 */
+
+    .A11{
+        color: tomato;
+    }
+    /* 这是类名字选择器 */
+
+    p{
+        color: teal;
+    }
+    /* 这是标签选择器，一个标签的都会选择 */
+
+/* 组合选择器 */
+    /* 交集选择器 */
+    /* 并集选择器 */
+    /* 标签，类选择器 */
+    p[class]{
+        color: yellow;
+    }
+
+/*我的发现：
+    选择器有优先级，有的排在后面也比排在前面的先生效
+    class会影响后面的所有后代元素 */
+
+
+
+
+</style>
+<body >
+    <div >
+        我是div
+        <p  class="A11">
+            我是div里面的p
+            <span >我是p里的span</span>
+        </p>
+    </div>
+
+    <div id="B1">我是另外一个div</div>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模块化实验-1</title>
+</head>
+
+<body>
+    <div>
+
+    </div>
+    模块化
+    <script type="module">
+        // 引入模板
+        import * as m1 from "./模块1.js"
+        // as后面的是模板在这个文件中的名字
+        // 1、./是当前目录
+        // 2、../是父级目录
+        // 3、/是根目录        
+        console.log(m1);
+
+        // 优点：
+// 防止命名冲突，代码复用，高维护性
+// 用export来规定模块的对外接口
+// import来输入其他模板的功能
+    </script>
+
+</body>
+
+</html>

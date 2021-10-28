@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* div>p{
+            color: yellow;
+        } */
+        /* 这就是父子 */
+        
+        div>p>span{
+            color: yellow;
+        }
+        /* 这就是祖先 */
+        p+span{
+            color: blue;
+        }
+        /* 这就是兄弟选择
+            兄+弟：后面的兄弟：中间不能有别的打断
+            兄~第 ：后面的所有兄弟*/
+
+    </style>
+</head>
+<!-- 
+    父子关系
+    祖先后代关系
+    兄弟关系
+ -->
+<body>
+    <div>
+        我是第v1
+        <p>
+            我是p
+            <span>我是span</span>
+        </p>
+        <span>我是span2号</span>
+    </div>
+    
+</body>
+</html>

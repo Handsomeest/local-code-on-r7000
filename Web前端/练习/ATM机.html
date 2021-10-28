@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM机</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        var money = 0;
+       do {
+          var select = prompt('请输入您要办理的业务\n1.存钱\n2.取钱\n3.余额查询\n4.退出') //弹出业务选择框
+        switch (select) {                                                               //用switcu来选择要进行的业务
+            case '1':                                                                   //弹窗获得的类型是字符串，要给选择条件'1'加上引号否则
+                var get_money = prompt('请输入您的存款金额');
+                // if (condition) {                                                     //想加一个判断输入的是否为数字的语句
+                    
+                // } else {
+                    
+                // }
+                money = money + Number(get_money);                                      //转换为数字类型
+                break;
+
+            case '2': 
+                var put_money = prompt('请输入您的取款金额'); 
+                put_money = Number(put_money)
+                if (put_money <= money) {
+                    money = money - Number(get_money); 
+                     
+                }  else{
+                    alert('您的余额不总');
+                }
+                //     
+                                                                      
+                                                     
+                break;
+
+            case '3':                                                                   
+               alert('您的余额为'+ money +'元') 
+               break;                                   
+               
+            case '4': 
+               
+               
+                break;                                                                  
+                
+                                           
+               
+
+
+                       
+            default:alert('请输入正确选项');
+                var select = 0;
+                break;
+        }
+       } while (select < 4 );
+
+    </script>
+</html>

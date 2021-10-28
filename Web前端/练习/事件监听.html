@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件监听</title>
+</head>
+
+<body>
+  <button>事件监听注册时间</button>
+    
+</body>
+    <script>
+        var btns = document.querySelectorAll('button');
+        console.log( btns);
+        btns[0].addEventListener('click',function () {   //addEventListener后面不要加点号，后面的函数我想如果引用别的函数的话要注意作用域的问题
+            alert(111);
+            alert(222);
+            alert('恭喜你张先生，您成功的使用了事件监听来注册事件');
+        })
+        btns[0].addEventListener('click',function () {
+            alert(222);
+            
+        })
+        btns[0].addEventListener('click',function () {
+           
+            alert('恭喜你张先生，您成功的使用了事件监听来注册事件');
+        })
+
+        function text1() {
+            alert(arguments[0]);
+            alert(arguments[1])；
+
+        }
+
+        text1(1,2);
+        // 做了个小实验函数语句里面有一句错误，整个函数就调用不起来，不会上面的正确的运行，下下面的错误的不运行的
+        // 而是整个都部运行了
+    </script>
+</html>

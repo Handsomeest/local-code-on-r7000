@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组织事件冒泡</title>
+</head>
+<style>
+    div {
+        width: 1000px;
+        height: 100px;
+        background-color: pink;
+        margin: 0 auto;
+    }
+    ul li{
+        width: 100px;
+        height: fit-content;
+        list-style-type: none;
+        background-color: purple;
+        margin: 0 auto;
+    }
+</style>
+
+<body>
+    <div>
+        father
+        <ul id="a1">
+            <li>son1</li>
+            <li>son2</li>
+            <li>son3</li>
+        </ul>
+    </div>
+
+    <script>
+        let div = document.querySelector('div');
+        div.addEventListener('click', function (e) {
+            alert("father")
+        })
+        // div.addEventListener("mousemove", function (e) {
+        //     alert("father")
+        // })
+
+        let ul1 = document.querySelector('#a1');
+        ul1.addEventListener('click', function (e) {
+           alert("son")
+           e.stopPropagation();//stop 停止 propagation 传播
+           e.cancelBubble = true; //这是IE的写法
+
+        })
+        // ul1.addEventListener("mousemove", function (e) {
+        //     alert("son")
+        // })
+
+        // 事件不一样不会因为冒泡互相影响；一个是点击，一个是鼠标移动
+        document.addEventListener('click',function(){
+            alert('document');
+        })
+    </script>
+</body>
+
+</html>

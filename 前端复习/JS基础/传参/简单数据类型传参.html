@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单数据类型传递参数</title>
+    <style>
+        div{
+            width: fit-content;
+            height: fit-content;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+    <div>
+        <a href="https://www.bilibili.com/video/BV1Sy4y1C7ha?p=190&spm_id_from=pageDriver" target="blank">
+        
+            <img src="./photos/微信截图_20210815214757.png" alt="简单数据类型传参示意图">
+        </a>
+    </div>
+
+<body>
+    <script>
+        // 简单数据类型实参传递给形参的时候
+        // 形参在栈里创建一个新的空间把实参的值复制过去
+        // 由此，在函数里修改被赋值的形参，对外面的实参不会有影响
+        // 形参和实参在栈里是两个区分开的
+        function fn(num) {
+            console.log(num);//11
+            num = 20;
+            console.log(num);//20
+            
+        }
+        var a1 = 11;
+        fn(a1);
+        console.log(a1);//11
+
+
+
+    </script>
+    
+</body>
+</html>

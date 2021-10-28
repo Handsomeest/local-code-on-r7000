@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-show</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+
+<body>
+    <div>
+        <template v-if="aqq - 3 > 0">
+            <p>这是文本</p>
+            <p>这也是文本</p>
+            <p>这还是文本</p>
+            <!-- 
+                使用template可以一次给几个元素添加v-if
+                不会破坏结果，template本身是不会出现在结构里面的
+             -->
+
+
+        </template>
+        <!-- 
+            v-if是把元素去掉或者加进去
+            v-show是把元素的display改掉，元素本身还是存在
+         -->
+
+
+
+        <button @click='changeDisplay'>点击按钮切换</button>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: 'div',
+            data() {
+                return {
+                    text: '我的世界',
+                    aqq: 1
+                }
+            },
+            methods: {
+                changeDisplay() {
+                    // if (this.aqq == true) {
+                    //     // 这里要用两个等号，两个等号才是比较，一个只是赋值
+                    //     return this.aqq = false
+
+                    // } else {
+                    //     this.aqq = true
+
+
+                    // }
+                    this.aqq++
+
+                }
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

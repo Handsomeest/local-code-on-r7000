@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let案例练习</title>
+</head>
+<style>
+    .container {
+        width: 800px;
+        height: 180px;
+        margin: 0 auto;
+        border: solid;
+
+    }
+
+    .page-header {
+        width: 150px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .item {
+        width: 150px;
+        height: 100px;
+        border-style: solid;
+        /* background-color: pink; */
+        float: left;
+        margin-left: 10px;
+        margin-top: 15px;
+
+    }
+
+    .zhaungjie {
+        width: 500px;
+        height: 100px;
+        margin: 0 auto;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <h2 class="page-header">点击切换颜色</h2>
+        <div class="zhaungjie">
+            <div class="item">按钮</div>
+            <div class="item">按钮</div>
+            <div class="item">按钮</div>
+
+        </div>
+        <script>
+            let grid = document.getElementsByClassName('item')
+            // console.log(grid[0]);
+            // 遍历绑定事件
+            for (let i = 0; i < grid.length; i++) {
+                grid[i].addEventListener('click', function () {
+                    // 排它法，先把所有的背景都去掉
+                    for (let j = 0; j < grid.length; j++) {
+                        grid[j].style.background = ''
+                        
+                    }
+                    // this.style.background = 'blue';
+                    grid[i].style.background = 'pink'
+
+                })
+
+            }
+        </script>
+
+    </div>
+
+</body>
+
+</html>

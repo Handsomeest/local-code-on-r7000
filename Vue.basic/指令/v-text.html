@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-text</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+
+</head>
+<body>
+    <div>
+        <span v-text="msg"></span>
+        <!-- 
+            v-text会把传过来的值忠实的转换成文本，不管里面传的是什么
+         -->
+        
+    </div>
+    <script>
+        let vm = new Vue({
+            el:'div',
+            data () {
+                return {
+                    msg:'<input>'
+                    
+                }
+            }
+        })
+    </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册时间的方法DOM0</title>
+</head>
+    <style>
+        div{
+            width: 350px;
+            height: 150px;
+            background-color: orange;
+            margin: 0 auto;
+        }
+        p{
+            width: 150px;
+            height: 60px;
+            background-color: orangered;
+            display: inline-block;
+            margin: 0 auto;
+
+        }
+    </style>
+
+<body>
+    <div id="a1">父元素
+        <p>子元素</p>
+    </div>
+    <script>
+        const div = document.getElementById('a1');
+        const p = document.getElementsByTagName('p')//这种办法就算获取到的只有一个东西，它也是给你创建了一个伪装数组
+        console.log(div);
+        console.log(p);//这里输出的是一个伪数组
+        // p.onclick = addEventListener('click',function (e) {     //这是一段错误代码。。。。。。
+           
+        //     alert('son');
+        // },false)
+        p[0].addEventListener('click',function (e) {     //方法监听注册事件，可以设置多个处理函数，各个函数依次执行。
+           alert('son');
+       },false)
+
+        div.onclick = function (e) {       //传统的注册事件方式
+            alert('father')               //传统方式注册事件，同一个元素同一个事件只能设置一个处理函数
+            
+        }
+    //   这里有个事件冒泡，点p会让div也触发一次
+        
+    </script>
+
+    
+</body>
+</html>

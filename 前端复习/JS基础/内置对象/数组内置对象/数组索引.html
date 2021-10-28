@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组索引</title>
+</head>
+<body>
+    <script>
+        // 数组索引是把一个元素放到数组里去匹配
+        // 找到第一个后就返回索引号，不再搜索后面的，没有就返回负一
+        // 从头搜索的是indexof
+        // 从尾开始搜索是lastIndexOf
+        // 返回的都是索引号，不管从头搜索还是从后搜索，索引号都是从前往后排
+        var arr = [1,2,3,4,5];
+       console.log(arr.indexOf(3));
+    //    console.log( arr.lastIndexOf(4));
+       
+       console.log(arr.lastIndexOf(2));
+       console.log(arr.lastIndexOf(9));//没有的东西返回的是-1；
+    </script>
+    
+</body>
+</html>

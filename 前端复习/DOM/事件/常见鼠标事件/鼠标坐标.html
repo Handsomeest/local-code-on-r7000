@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标坐标</title>
+</head>
+<style>
+    div{
+        height: 5000px;
+    }
+</style>
+<body>
+    <div>
+
+    </div>
+    <script>
+        document.addEventListener('click',function(e){
+            console.log(e.clientX);
+            console.log(e.clientY);
+            // 这两个是鼠标点击位置相对于可视区域的坐标位置
+            // 左边是X轴线，右边是Y轴线
+            console.log('------------');
+            console.log(e.pageX);
+            console.log(e.pageY);
+            // 这两是输出相对于页面文档的坐标，是从页面的开始位置来开始算的
+        })
+    </script>
+    
+</body>
+</html>

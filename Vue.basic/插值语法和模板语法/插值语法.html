@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>插值语法</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <p>插值语法就是写两个大括号{{}}在括号中间插进想要的值</p>
+        <p>例子</p>
+        <p>{{something}}</p>
+        <!-- 
+            插值语法里面要写表达式，
+            判断之类的可以用三目表达式
+         -->
+    </div>
+    <script>
+        const vm = new Vue({
+            el: "#root",
+            data(){
+                return{
+                    something: "一点一点来吧，加油张先生",
+                }
+            }
+        })
+    </script>
+  
+    
+</body>
+</html>

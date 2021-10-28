@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪元素的选择器</title>
+    <!-- 例如实现首字母大写 
+        加双引号 -->
+
+
+    <!-- 伪元素表示页面中一些并不真实存在的元素（特殊的位置，例如首字母） -->
+    <!-- 伪元素使用：：开头
+        ::firse-letter表示第一个子盲目
+        ::first-line表示第一行
+        ::selection表示选中的内容
+        ::before元素的开始位置
+        ::after元素的最后位置  before和after要配合content使用，原来在元素之前是没有内容的
+        content的意思就是内容，添加一个内容：通过CSS来添加的内容，是无法选中的
+        
+    -->
+    <style>
+        p{
+            font-size: 40px;
+        }
+        div[CLASS]::first-letter
+        {
+            color: teal; 
+            font-size: 150px;  
+            background-color: tomato; 
+        }
+    </style>
+</head>
+<body>
+    <div class="A2">哈哈哈</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, numquam enim quos deserunt voluptates consequatur illum ipsam repellat fugit! Cum minus excepturi blanditiis ex optio praesentium similique neque accusantium animi.</p>
+    <div >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus molestiae sint alias minus rerum modi natus iusto voluptatum! Aut doloremque perspiciatis, odit doloribus dolore vero error est assumenda enim adipisci.
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模板语法</title>
+    <script type="text/javascript" src="/01初识Vue/JS/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <p>容器又叫模板</p>
+        <p>指令是vue.js里面最常用的一项功能，带有前缀V-</p>
+        <p>v-bind的作用是动态更新HTML元素的属性，例如ID、class、scr等</p>
+        <p>例子</p>
+        <a v-bind:href="webside">这是一个超链接</a>
+        <!-- v-bind就是用来动态的修改html标签里面的属性的 -->
+    </div>
+    <script>
+        const vm = new Vue({
+            el: "#root",
+            data() {
+                return {
+                    webside: "https://www.zhihu.com/search?type=content&q=VUE%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8",
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

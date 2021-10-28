@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>111</title>
+    <script type="text/javascript" src="./vue.js"></script>
+</head>
+
+<body>
+
+    <p class="a1">{{  computedContent }}</p>
+    <p class="a1">{{  xx() }}</p>
+    <script>
+        let vm = new Vue({
+            el: ".a1",
+            data() {
+                return {
+                    content: "万事不求人",
+                    arr: ["我也是", "俺也一样", " 算我一个 ", " 我差不多 ", " 我也想 ", " 可以的 "],
+                    xx(){
+                        return Math.floor(Math.random()*5);
+                        
+                    }
+                }
+            },
+            computed: {
+                computedContent: {
+                    
+                    get() {
+                        console.log(this.xx());
+                        return this.arr[this.xx()]
+                    }
+                }
+            },
+            // methods: {
+            //     click(){
+                    
+            //     }
+            // }
+
+        })
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器</title>
+</head>
+    <style>
+        /* 有个问题就是上边距重叠了；这个问题暂且不管，先实现整个操作 */
+        div {
+            height: 400px;
+            width: 250px;
+            background-color: coral;
+            margin: 0 auto;
+        }
+        button{
+            display: block;
+            height: auto;
+            width: 150px;
+            margin-left:  auto;
+            margin-right: auto;
+            margin-top: 100px;
+        }
+        h1{
+            display: block;
+            height: auto;
+            width: 230px;
+            margin-left:  auto;
+            margin-right: auto;
+            margin-top: 50px
+        }
+        /* h1::before{
+            width: 0px;
+            height: 0px;
+        } */
+       /* 这是解决上边距重叠做的一次尝试 */
+    </style>
+<body>
+    <div>
+        <h1>
+            计算器操作步骤
+        </h1>
+        <p>
+            先选择要进行的操作，再输入数值
+
+        </p>
+        <button onclick="myFunction()"> 我知道了，开始！</button>
+        
+    </div>
+    
+</body>
+    <script>
+        function myFunction(params) {
+            var select = prompt('请选择您的操作\n1.求和\n2.求差')
+
+           do {
+               switch (select) {
+                   case 1:
+                       
+                       break;
+               
+                   default:
+                       break;
+               }
+               
+           } while (condition); 
+        }
+    </script>
+
+</html>

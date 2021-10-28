@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复杂数据类型传参</title>
+    <style>
+    div{
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+    }
+</style>
+</head>
+
+<div>
+    <a href="https://www.bilibili.com/video/BV1Sy4y1C7ha?p=191&spm_id_from=pageDriver" target="blank">
+        <img src="./photos/2.png" alt="复杂数据类型传参示意图">
+    </a>
+</div>
+<body>
+    <script>
+        // 实参传递给形参是在栈里开辟了个新区把地址复制给了形参
+        // 然后形参指向复杂数据
+        // 他们只是在栈里在不同空间，在堆里面数据是在同一个区间
+
+        function persion(x) {  //实参传递给形参，在栈里开辟一个新空间，把地址复制过去。指向堆里同一个空间
+            console.log(x.name);
+           this.name = '张学友';//在堆里把属性改了，把数据改了
+           console.log(x.name);//应该是张学友
+           
+        }
+
+        var p = new Object //创建了一个对象，在栈里出现了一个地址，在堆里开辟了个空间
+        p.name = '刘德华';
+
+        persion(p);
+        console.log(p);//预测一波是张学友
+        // 额上面输出的是一个对象，尴尬了
+        console.log(typeof(p));
+        console.log(p.name);//预测一波是张学友
+
+
+
+
+        
+    </script>
+    
+</body>
+</html>

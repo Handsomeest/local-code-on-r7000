@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象创建和调用</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        // 对象是具体事物，可以是网页，数据库，一个与服务器的链接
+        // 在JS中对象是无序的相关属性和方法的集合
+        // 创建对象有三个方法：
+        // 1：利用字面值：
+        var obj = {
+            uname: '张三风',        //属性或者对象名后面加： 空格最后要是逗号，
+            age: 18,
+            sex: '男',
+            sayHi: function(){      //这是一个方法
+                alert('Hi');
+               
+            }
+
+        };
+
+        // 调用对象的属性：有两种方法：
+        console.log(obj.uname);
+        console.log(obj['sex']);
+        // 调用对象的方法后面要加（），因为方法是个函数
+        obj.sayHi();
+    </script>
+</html>

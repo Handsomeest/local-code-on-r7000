@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../01初识Vue/JS/vue.js"></script>
+</head>
+    <style>
+        div{
+            width: fit-content;
+            height: fit-content;
+            margin: 0 auto;
+        }
+    </style>
+<body>
+    <!-- keydown是按下事件不要弹起就会有反应了 -->
+    <!-- keyup是按下并且弹起才会有反应 -->
+    <!-- 事件别名 -->
+    <!-- 回车 => enter
+        删除：delete
+        退出：esc
+        空格：space
+        换行：tab
+        上：up
+        下：down
+        左：left
+        右：right
+       
+    -->
+
+    <!-- 
+        特殊的caps-lock
+        ctrl、alt、win键、shift键这几个要搭配keydown使用，不然的话，他们是要按下再按别的才会生效比方说CTRL.y就是要按两个才可以用
+        单纯写一个ctrl就ctrl加那个键都可以用
+
+        tab也是一个特殊的：因为点击tab的时候本身就会切换光标位置，要用keydown;没弹起来就反应了，虽然之后还是会切换焦点，但是已经反应了
+
+     -->
+    <div id="a1">
+        <input type="text" placeholder="按下回车提示输入"  @keyup.enter ="showInfo"></br>
+        <input type="text" placeholder="按下回车提示输入"  @keyup.delete ="showInfo2"></br>
+        <input type="text" placeholder="按下回车提示输入"  @keyup.esc ="showInfo3"></br>
+        <input type="text" placeholder="按下回车提示输入"  @keyup.space ="showInfo4"></br>
+        <input type="text" placeholder="按下回车提示输入"  @keyup.tab ="showInfo5"></br>
+        <input type="text" placeholder="按下回车提示输入"  @keyup.up ="showInfo6"></br>
+        <input type="text" placeholder="按下回车提示输入"  @keyup.down ="showInfo7"></br>
+        <input type="text" placeholder="按下回车提示输入"  @keyup.left ="showInfo8"></br>
+        <input type="text" placeholder="按下回车提示输入"  @keyup.right ="showInfo9"></br>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el:"#a1",
+            // methods:{
+            //     showInfo(e){
+            //         if (e.keycode !==13 ) return
+            //         console.log('1');
+                    
+                
+            //     }
+               
+            // }
+            // keycode输出的是按键的编码；
+            // key输出的是按键的名字
+            methods: {
+                showInfo(e){
+                    console.log('1a'+ e.target.value);
+                    alert('我是傻逼福');
+                },
+                // 里面的this是vm
+                // 第二个方法直接接着写
+                showInfo2(e){
+                    console.log('2a'+ e.target.value);
+                },
+                showInfo3(e){
+                    console.log('3a'+ e.target.value);
+                },
+                showInfo4(e){
+                    console.log('4a'+ e.target.value);
+                },
+                showInfo5(e){
+                    console.log('5a'+ e.target.value);
+                },
+                showInfo6(e){
+                    console.log('6a'+ e.target.value);
+                },
+                showInfo7(e){
+                    console.log('7a'+ e.target.value);
+                },
+                showInfo8(e){
+                    console.log('8a'+ e.target.value);
+                },
+                showInfo9(e){
+                    console.log('9a'+ e.target.value);
+                },
+            },
+
+                
+          
+                
+        })
+        // keycode是按键编码；每一个按键都有自己对应的编码
+        // 
+
+    </script>
+    
+</body>
+</html>

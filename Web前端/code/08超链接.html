@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超链接</title>
+</head>
+<body>
+    <!-- ./上一层
+        ../上上层
+        /根目录
+
+        target属性表示超链接的打开位置  
+            可选值
+                _self 默认位置，不选就是这个位置
+                —blank 在空白页打开一个新的
+    
+    -->
+    <p>试试<a>一下 1</a></p>
+    <p>试试<a href="http://www.baidu.com">一下2 </a></p>
+    <p>试试<a href="07列表.html">一下3 </a></p>
+    <p>试试<a href="/1/trget.html">一下4 </a></p>
+    <br>
+    <br>
+    <br>
+
+    <p>试试<a href="/1/trget.html" target="_self">一下5 </a></p>
+    <p>试试<a href="/1/trget.html" target="_blank">一下6 </a></p>
+    <p>试试<a href="/1/trget.html" target="_parent">一下7 </a></p>
+    <p>试试<a href="/1/trget.html" target="_top">一下8 </a></p>
+    <!-- herf加“#加目标的ID”就可以去任意位置 -->
+    <a href="#A11">去底部</a>
+    <br>
+    <a href="#p3" target="_self">去第三段</a>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores molestiae velit sequi similique dignissimos libero modi corrupti fugit facilis ullam. Voluptate quibusdam cum officia unde sed labore facere dolorem aperiam.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores molestiae velit sequi similique dignissimos libero modi corrupti fugit facilis ullam. Voluptate quibusdam cum officia unde sed labore facere dolorem aperiam.</p>
+    <p id="p3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores molestiae velit sequi similique dignissimos libero modi corrupti fugit facilis ullam. Voluptate quibusdam cum officia unde sed labore facere dolorem aperiam.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores molestiae velit sequi similique dignissimos libero modi corrupti fugit facilis ullam. Voluptate quibusdam cum officia unde sed labore facere dolorem aperiam.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores molestiae velit sequi similique dignissimos libero modi corrupti fugit facilis ullam. Voluptate quibusdam cum officia unde sed labore facere dolorem aperiam.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores molestiae velit sequi similique dignissimos libero modi corrupti fugit facilis ullam. Voluptate quibusdam cum officia unde sed labore facere dolorem aperiam.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores molestiae velit sequi similique dignissimos libero modi corrupti fugit facilis ullam. Voluptate quibusdam cum officia unde sed labore facere dolorem aperiam.</p>
+    <!-- id属性
+       每个标签可以添加一个不重复的id属性
+       id区分大小写，都是字母开头 
+    
+    -->
+    <a id="A11" href="#">回到网页顶部</a>
+</body>
+</html>
