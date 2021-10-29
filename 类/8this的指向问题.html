@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this的指向问题</title>
+</head>
+
+<body>
+
+    <script>
+        var that
+        class Sss {
+            constructor(x, y,uname) {
+                // counstructor里面的this指向的是创建的实例对象
+                that = this;
+                this.x = x;
+                this.y = y;
+                this.uname = uname
+
+            }
+            // 方法里面的this指向这个方法的调用者
+            sum() {
+                return this.x + this.y;
+            }
+            dance() {
+                console.log(this);
+            }
+        }
+        console.log(that);    //undefind
+        var s1 = new Sss(1, 2,'刘德华');  //创建实例化对象
+        console.log(that);
+        console.log(s1.sum);
+        console.log(s1.sum());
+        s1.dance();
+        var s1 = new Sss(4, 5,'周润发');  
+        console.log(that);
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型</title>
+</head>
+
+<body>
+    <!-- 
+        使用构造函数时，里面的函数每次都会创建一次，会浪费内存空间
+        一般情况下，公共属性定义在构造函数里，公共方法放到原型对象上
+     -->
+    <script>
+        //  JS规定每一个构造函数都有一个prototype属性，指向另一个对象
+        //  原型是个对象，所以也叫原型对象
+        // 可以把不变的方法,属性 直接定义在原型对象上，这样所有对象的实例都可以共享这些方法 
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;  // 实例成员（通过this添加的成员，只能在实例中访问。构造函数是访问不到的）
+            
+        }
+        Star.prototype.sing = function () {
+            console.log(this.uname + '唱歌');
+        }
+        Star.sex2 = '女'  //这是静态成员，静态成员是添加在构造函数本身上的，只能通过构造函数来访问
+        Star.prototype.sex = '男'
+        var ldh = new Star('刘德华', 18);
+        var zxy = new Star('张学友', 28);
+        console.log(ldh);
+        console.log(ldh.sex); //结果是男，原型上来的
+        console.log(ldh.sex2); //结果是undefind，sex2是静态成员，只能通过构造函数来访问
+        console.log(Star.sex2);  //原型上的东西是共享到了实例，也就是类中去了，构造函数没有
+        console.log(Star.sex);
+        ldh.sing();
+        console.log(ldh.sing === zxy.sing); //结果是true,因为他们都是这个函数都是同一个变量，都是从原型对象来的
+
+        // 原型上如果有属性，属性值是一个引用类型的话，改变一个实例，会引起其他实例里面的值也跟随变化
+        // 所以这种属性要在构造函数中间定义，这样实例应用的是不同的对象。
+
+
+    </script>
+
+</body>
+
+</html>

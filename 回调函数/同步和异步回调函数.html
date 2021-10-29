@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>同步和异步回调函数</title>
+</head>
+<body>
+    <script>
+        // 同步回调函数；不会放进异步执行栈
+        const arr = [1,2,3,4,5];
+        arr.forEach(item  =>{
+            // 这个回调函数就没有异步执行
+            console.log(item);
+
+        })
+        console.log('after forEach');
+        // 异步回调函数
+        setTimeout(()=>{
+            console.log('延时函数');
+
+        },0)
+        console.log('在延时函数之后');
+    </script>
+    
+</body>
+</html>

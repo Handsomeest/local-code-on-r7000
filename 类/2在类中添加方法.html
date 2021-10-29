@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类中添加方法</title>
+</head>
+
+<body>
+    <script>
+        // 创建类
+        // 类里面所有的函数都不需要写function关键字，函数之间不要加逗号
+        class Star {
+            // 公用的属性放在constructor里面
+            constructor(uname, age) {
+                this.uname = uname;
+                this.age = age;
+            }
+            // 共有的方法 
+            say(song) {
+                console.log(this.uname + '唱的' + song);
+            }
+        }
+
+        // 利用类创建 对象 new
+        var ldh = new Star('刘德华', 18);
+        var zxy = new Star('张学友', 19);
+        console.log(ldh);
+        console.log(zxy);
+        ldh.say('17岁')
+        zxy .say('冰冰')
+
+        console.log(ldh.say === zxy.say); //结果是true,看样子是加到原型上去了
+    </script>
+
+</body>
+
+</html>

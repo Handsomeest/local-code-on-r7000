@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="uname-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数的继承</title>
+</head>
+
+<body>
+    <!-- 
+        构造函数中，公共的属性放在构造函数里，
+        公共的方法放在原型对象.prototype上面
+        prototype上面不要放属性，因为引用类型会发生错误
+     -->
+    <script>
+        function Father(uname, age) {
+            this.uname = uname;
+            this.age = age;
+            // 共有的方法写到原型对象上，
+        }
+        Father.prototype.money = function () {
+            console.log('爸爸的100块钱');
+            // 这样是给原型单独添加一个方法，不会影响整个原型
+
+        }
+        // 接下来是继承父类的原型对象方法：
+        Son.prototype = new Father();
+        // 这样是把整个原型都覆盖掉了，里面的constructor指向就会有问题
+
+
+
+
+        function Son(uname1, age1) {
+            //  利用call()，来改变this的指向
+            Father.call(this, uname1, age1)
+
+        }
+        var son = new Son('儿子', 11);
+        console.log(son.uname);
+        console.log(son.uname1);
+        //  nuame1是个形参，实际的属性还是父亲里面的uname
+
+    </script>
+
+</body>
+
+</html>
